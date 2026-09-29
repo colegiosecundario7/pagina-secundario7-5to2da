@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>5° Primera - Secundario N°7 Maestro Mario Humberto Pérez</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,800;1,9..144,600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --verde:#0f3d2e;
+  --verde-2:#1d6b4d;
+  --verde-3:#cfe3d8;
+  --blanco:#ffffff;
+  --fondo:#f3f8f5;
+  --negro:#161a18;
+  --radio:14px;
+  --display:"Fraunces", Georgia, serif;
+  --texto:"DM Sans", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--texto);color:var(--negro);background:var(--fondo);line-height:1.7}
+
+/* Portada */
+.hero{
+  background:
+    radial-gradient(700px 300px at 85% 0%, rgba(255,255,255,.14), transparent 60%),
+    linear-gradient(160deg, var(--verde), #0a2a20);
+  color:var(--blanco);
+  padding:72px 6vw 88px;
+  text-align:center;
+}
+.hero{position:relative}
+.logo{
+  position:absolute;top:18px;left:18px;
+  width:84px;height:84px;border-radius:50%;
+  background:var(--blanco);border:3px solid var(--verde-3);
+  display:flex;align-items:center;justify-content:center;overflow:hidden;
+  box-shadow:0 6px 18px rgba(0,0,0,.25);
+}
+.logo img{width:100%;height:100%;object-fit:contain;padding:6px}
+@media(max-width:700px){
+  .logo{width:64px;height:64px;top:12px;left:12px}
+  .hero{padding-top:92px}
+}
+.hero h1{
+  font-family:var(--display);
+  font-weight:800;
+  font-size:clamp(2.2rem,6vw,4.2rem);
+  line-height:1.1;
+  margin:0 auto;
+  max-width:900px;
+  background:linear-gradient(100deg,#fff 0%,#fff 35%,#9fd6b8 50%,#fff 65%,#fff 100%);
+  background-size:250% 100%;
+  -webkit-background-clip:text;background-clip:text;
+  color:transparent;-webkit-text-fill-color:transparent;
+  animation:brillo 4.5s ease-in-out 1 both;
+}
+@keyframes brillo{from{background-position:100% 0}to{background-position:0 0}}
+.hero p{margin:18px auto 0;max-width:640px;color:var(--verde-3);font-size:1.02rem}
+
+.container{width:min(1080px,92vw);margin:-40px auto 60px;position:relative}
+
+/* Secciones */
+section{
+  background:var(--blanco);
+  border-radius:var(--radio);
+  border:1px solid var(--verde-3);
+  padding:28px;
+  margin-top:24px;
+  box-shadow:0 8px 28px rgba(15,61,46,.08);
+}
+h2{
+  font-family:var(--display);
+  font-weight:600;
+  font-size:clamp(1.4rem,3vw,1.9rem);
+  color:var(--verde);
+  margin:0 0 14px;
+  display:inline-block;
+  position:relative;
+  padding-bottom:8px;
+  letter-spacing:.2px;
+}
+h2::after{
+  content:"";position:absolute;left:0;bottom:0;height:3px;width:0;
+  background:linear-gradient(90deg,var(--verde),var(--verde-2),var(--verde-3));
+  border-radius:3px;transition:width .9s ease;
+}
+h2.on::after{width:100%}
+h2 em{font-style:italic;color:var(--verde-2)}
+
+p{margin:10px 0;color:#2c3a33}
+ul,ol{margin:0;padding-left:20px;color:#2c3a33;line-height:1.9}
+li::marker{color:var(--verde-2)}
+
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media(max-width:850px){.grid-2{grid-template-columns:1fr}}
+.card{
+  padding:20px;border-radius:var(--radio);
+  background:var(--fondo);border-left:5px solid var(--verde);
+}
+.card h2{font-size:1.3rem}
+
+.numero{font-family:var(--display);font-weight:800;font-size:3.6rem;color:var(--verde);line-height:1}
+
+/* Imágenes */
+.img-wrap{position:relative;margin:0;border-radius:var(--radio);overflow:hidden;background:var(--verde-3);border:1px solid var(--verde-3)}
+.img-wrap img{width:100%;height:320px;object-fit:cover;display:block;transition:transform .7s ease}
+.img-wrap:hover img{transform:scale(1.06)}
+.img-badge{
+  position:absolute;left:12px;bottom:12px;padding:8px 14px;border-radius:999px;
+  background:var(--verde);color:var(--blanco);font-size:.9rem;font-weight:500;
+}
+
+/* Tablas */
+.tabla{overflow:auto;border-radius:var(--radio);border:1px solid var(--verde-3)}
+table{width:100%;border-collapse:collapse;min-width:640px}
+th,td{padding:12px 14px;text-align:left;font-size:.94rem;border-bottom:1px solid var(--verde-3);vertical-align:top}
+th{background:var(--verde);color:var(--blanco);font-weight:700}
+tbody tr:nth-child(even){background:var(--fondo)}
+tbody tr:hover{background:#e3efe8}
+td:first-child{font-weight:700;color:var(--verde);white-space:nowrap}
+
+/* Botón */
+.btn{
+  display:inline-block;margin-top:20px;padding:12px 22px;border-radius:999px;
+  background:var(--verde);color:var(--blanco);text-decoration:none;font-weight:700;
+  transition:background .25s ease, transform .2s ease;
+}
+.btn:hover{background:var(--verde-2);transform:translateY(-2px)}
+.btn:focus-visible,a:focus-visible{outline:3px solid var(--verde-2);outline-offset:3px}
+
+/* Aparición */
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:none}
+
+footer{text-align:center;padding:0 0 40px;color:var(--verde-2);font-size:.9rem}
+
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  h2::after{transition:none;width:100%}
+  .hero h1{animation:none;-webkit-text-fill-color:#fff;color:#fff}
+  .img-wrap img{transition:none}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <!-- Logo del colegio: guardá tu imagen como logo-colegio.png en la misma carpeta -->
+  <di ><img src="index.html/imagens/descarga (1)logo.png" alt=""></div>
+  <h1>5°1 Especializados en Arte</h1>
+  <p>Secundario N°7 “Maestro Mario Humberto Pérez” · Turno Mañana · Ciclo lectivo 2026</p>
+</header>
+
+<main class="container">
+
+  <section class="reveal">
+    <div class="grid-2">
+      <div class="card">
+        <h2>Cantidad de <em>alumnos</em></h2>
+        <p><span class="numero">26</span></p>
+        <p>estudiantes en total</p>
+      </div>
+      <div class="card">
+        <h2>Foto grupal</h2>
+        <figure class="img-wrap">
+          <img src="index.html/imagens/foto grupal.jpg" alt="Foto grupal del 5°1" />
+          <figcaption class="img-badge">¡Orgullosos de nuestro grupo!</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <h2>Sobre el curso</h2>
+    <p>5° Primera es un curso conformado por estudiantes comprometidos y unidos, que a lo largo de los años transitados juntos han construido un fuerte sentido de compañerismo. El grupo se caracteriza por el respeto mutuo y la colaboración constante entre sus integrantes, tanto dentro como fuera del aula.</p>
+    <p>El 5° 1° del turno mañana se caracteriza por su creatividad y por las ganas de participar en nuevas experiencias. El arte ocupa un lugar especial, ya que nos permite expresarnos de diferentes maneras: dibujando, pintando, creando, diseñando y trabajando en equipo.</p>
+    <p>Durante el año realizamos actividades y proyectos que nos permiten descubrir nuestras habilidades, compartir ideas y aprender de nuestros compañeros. Cada producción tiene algo de nosotros y representa el esfuerzo y la dedicación que ponemos en cada propuesta.</p>
+    <figure class="img-wrap" style="margin-top:16px">
+      <img src="index.html/imagens/nose pero bueno.jpg" alt="Actividad artística del curso" />
+      <figcaption class="img-badge">Arte en acción</figcaption>
+    </figure>
+  </section>
+
+  <section class="reveal">
+    <h2>Materias</h2>
+    <ul>
+      <li>Matemática</li>
+      <li>Lengua y Literatura</li>
+      <li>Taller de Imagen, Representación y Nuevos Medios</li>
+      <li>Taller de Escultura y Pintura</li>
+      <li>Producción y Análisis Visual</li>
+      <li>Química</li>
+      <li>Filosofía</li>
+      <li>Inglés</li>
+      <li>Educación Física</li>
+      <li>Taller Integrador de Ciencias Sociales y Lengua</li>
+      <li>Taller de Grabación y Arte Impreso</li>
+    </ul>
+  </section>
+
+  <section class="reveal">
+    <h2>Horario semanal</h2>
+    <div class="tabla">
+      <table>
+        <thead>
+          <tr><th>Hora</th><th>Lunes</th><th>Martes</th><th>Miércoles</th><th>Jueves</th><th>Viernes</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>08:00 - 08:40</td><td>Lengua y Literatura</td><td>Lengua y Literatura</td><td>Taller de Escultura y Pintura</td><td>Filosofía</td><td>Taller de Grabación y Arte Impreso</td></tr>
+          <tr><td>08:40 - 09:20</td><td>Taller de Imagen Rep. y Nuevos Medios</td><td>Taller de Escultura y Pintura</td><td>Producción y Análisis Visual</td><td>Taller Integrador de Lengua</td><td>Taller Integrador de Ciencias Sociales y Lengua</td></tr>
+          <tr><td>09:30 - 10:10</td><td>Inglés</td><td>Matemática</td><td>Matemática</td><td>Taller de Grabación y Arte Impreso</td><td>Química</td></tr>
+          <tr><td>11:40 - 12:20</td><td>Inglés</td><td>Matemática</td><td>Matemática</td><td>Taller de Grabación y Arte Impreso</td><td>Química</td></tr>
+          <tr><td>12:20 - 13:00</td><td>Química</td><td>Producción y Análisis Visual</td><td>Inglés</td><td>Taller de Imagen Rep. y Nuevos Medios</td><td>Filosofía</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <h2>Profesores</h2>
+    <div class="tabla">
+      <table>
+        <thead><tr><th>Materia</th><th>Profesor</th></tr></thead>
+        <tbody>
+          <tr><td>Matemática</td><td>Gladis Cardoso</td></tr>
+          <tr><td>Lengua y Literatura</td><td>Irma Churquina</td></tr>
+          <tr><td>Taller de Imagen Rep. y Nuevos Medios</td><td>Batallanos Andrea</td></tr>
+          <tr><td>Inglés</td><td>Gelmeti Silvana</td></tr>
+          <tr><td>Química</td><td>Vera Marcela</td></tr>
+          <tr><td>Taller de Grabación y Pintura</td><td>Mateo Torres</td></tr>
+          <tr><td>Producción y Análisis Visual</td><td>Mamani Melani</td></tr>
+          <tr><td>Filosofía</td><td>Martines Maria</td></tr>
+          <tr><td>Educación Física</td><td>Carmen Guerrero</td></tr>
+          <tr><td>Taller de Grabación y Arte Impreso</td><td>Condori Eugenio</td></tr>
+          <tr><td>Taller de Ciencias y Lengua</td><td>Janco Maria</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <div class="grid-2">
+      <div class="card">
+        <h2>Información del curso</h2>
+        <ul>
+          <li><strong>Curso:</strong> 5° Año - División: Primera</li>
+          <li><strong>Turno:</strong> Mañana</li>
+          <li><strong>Ciclo lectivo:</strong> 2026</li>
+          <li><strong>Colegio:</strong> Secundario N°7 Maestro Mario Humberto Pérez</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>Objetivos del curso</h2>
+        <ol>
+          <li>Aprender y fortalecer los conocimientos.</li>
+          <li>Trabajar en equipo.</li>
+          <li>Respetar a los compañeros y profesores.</li>
+          <li>Participar en actividades escolares.</li>
+          <li>Prepararse para los estudios superiores o el mundo laboral.</li>
+          <li>Finalizar exitosamente el último año.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <h2>Actividades</h2>
+    <ul>
+      <li>Feria de Ciencias.</li>
+      <li>Educación Física.</li>
+      <li>Actos escolares.</li>
+      <li>Proyectos grupales.</li>
+      <li>Salidas educativas.</li>
+      <li>Fiesta Nacional de los Estudiantes.</li>
+    </ul>
+  </section>
+
+  <section class="reveal">
+    <h2>Nuestra institución</h2>
+    <p>Video Institucional</p>
+  <video controls preload="metadata" style="width:100%;border-radius:14px">
+  <source src="index.html/video turno mañana.mp4" type="video/mp4">
+</video>
+  </section>
+
+</main>
+
+<footer>5°1 · Ciclo lectivo 2026</footer>
+
+<script>
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        e.target.querySelectorAll('h2').forEach(h => h.classList.add('on'));
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
