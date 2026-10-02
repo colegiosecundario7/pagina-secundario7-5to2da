@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>1° Tercera - Secundario N°7 Maestro Mario Humberto Pérez</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,800;1,9..144,600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --verde:#0f3d2e;
+  --verde-2:#1d6b4d;
+  --verde-3:#cfe3d8;
+  --blanco:#ffffff;
+  --fondo:#f3f8f5;
+  --negro:#161a18;
+  --radio:14px;
+  --display:"Fraunces", Georgia, serif;
+  --texto:"DM Sans", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--texto);color:var(--negro);background:var(--fondo);line-height:1.7}
+
+/* Portada */
+.hero{
+  background:
+    radial-gradient(700px 300px at 85% 0%, rgba(255,255,255,.14), transparent 60%),
+    linear-gradient(160deg, var(--verde), #0a2a20);
+  color:var(--blanco);
+  padding:72px 6vw 88px;
+  text-align:center;
+}
+.hero{position:relative}
+.logo{
+  position:absolute;top:18px;left:18px;
+  width:84px;height:84px;border-radius:50%;
+  background:var(--blanco);border:3px solid var(--verde-3);
+  display:flex;align-items:center;justify-content:center;overflow:hidden;
+  box-shadow:0 6px 18px rgba(0,0,0,.25);
+}
+.logo img{width:100%;height:100%;object-fit:contain;padding:6px}
+@media(max-width:700px){
+  .logo{width:64px;height:64px;top:12px;left:12px}
+  .hero{padding-top:92px}
+}
+.hero h1{
+  font-family:var(--display);
+  font-weight:800;
+  font-size:clamp(2.2rem,6vw,4.2rem);
+  line-height:1.1;
+  margin:0 auto;
+  max-width:900px;
+  background:linear-gradient(100deg,#fff 0%,#fff 35%,#9fd6b8 50%,#fff 65%,#fff 100%);
+  background-size:250% 100%;
+  -webkit-background-clip:text;background-clip:text;
+  color:transparent;-webkit-text-fill-color:transparent;
+  animation:brillo 4.5s ease-in-out 1 both;
+}
+@keyframes brillo{from{background-position:100% 0}to{background-position:0 0}}
+.hero p{margin:18px auto 0;max-width:640px;color:var(--verde-3);font-size:1.02rem}
+
+.container{width:min(1080px,92vw);margin:-40px auto 60px;position:relative}
+
+/* Secciones */
+section{
+  background:var(--blanco);
+  border-radius:var(--radio);
+  border:1px solid var(--verde-3);
+  padding:28px;
+  margin-top:24px;
+  box-shadow:0 8px 28px rgba(15,61,46,.08);
+}
+h2{
+  font-family:var(--display);
+  font-weight:600;
+  font-size:clamp(1.4rem,3vw,1.9rem);
+  color:var(--verde);
+  margin:0 0 14px;
+  display:inline-block;
+  position:relative;
+  padding-bottom:8px;
+  letter-spacing:.2px;
+}
+h2::after{
+  content:"";position:absolute;left:0;bottom:0;height:3px;width:0;
+  background:linear-gradient(90deg,var(--verde),var(--verde-2),var(--verde-3));
+  border-radius:3px;transition:width .9s ease;
+}
+h2.on::after{width:100%}
+h2 em{font-style:italic;color:var(--verde-2)}
+
+p{margin:10px 0;color:#2c3a33}
+ul,ol{margin:0;padding-left:20px;color:#2c3a33;line-height:1.9}
+li::marker{color:var(--verde-2)}
+
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media(max-width:850px){.grid-2{grid-template-columns:1fr}}
+.card{
+  padding:20px;border-radius:var(--radio);
+  background:var(--fondo);border-left:5px solid var(--verde);
+}
+.card h2{font-size:1.3rem}
+
+.numero{font-family:var(--display);font-weight:800;font-size:3.6rem;color:var(--verde);line-height:1}
+
+/* Imágenes */
+.img-wrap{position:relative;margin:0;border-radius:var(--radio);overflow:hidden;background:var(--verde-3);border:1px solid var(--verde-3)}
+.img-wrap img{width:100%;height:320px;object-fit:cover;display:block;transition:transform .7s ease}
+.img-wrap:hover img{transform:scale(1.06)}
+.img-badge{
+  position:absolute;left:12px;bottom:12px;padding:8px 14px;border-radius:999px;
+  background:var(--verde);color:var(--blanco);font-size:.9rem;font-weight:500;
+}
+
+/* Tablas */
+.tabla{overflow:auto;border-radius:var(--radio);border:1px solid var(--verde-3)}
+table{width:100%;border-collapse:collapse;min-width:640px}
+th,td{padding:12px 14px;text-align:left;font-size:.94rem;border-bottom:1px solid var(--verde-3);vertical-align:top}
+th{background:var(--verde);color:var(--blanco);font-weight:700}
+tbody tr:nth-child(even){background:var(--fondo)}
+tbody tr:hover{background:#e3efe8}
+td:first-child{font-weight:700;color:var(--verde);white-space:nowrap}
+
+/* Botón */
+.btn{
+  display:inline-block;margin-top:20px;padding:12px 22px;border-radius:999px;
+  background:var(--verde);color:var(--blanco);text-decoration:none;font-weight:700;
+  transition:background .25s ease, transform .2s ease;
+}
+.btn:hover{background:var(--verde-2);transform:translateY(-2px)}
+.btn:focus-visible,a:focus-visible{outline:3px solid var(--verde-2);outline-offset:3px}
+
+/* Aparición */
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:none}
+
+footer{text-align:center;padding:0 0 40px;color:var(--verde-2);font-size:.9rem}
+
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  h2::after{transition:none;width:100%}
+  .hero h1{animation:none;-webkit-text-fill-color:#fff;color:#fff}
+  .img-wrap img{transition:none}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="logo"><img src="imgens o videos/descarga (1)logo.png" alt="Logo del Secundario N°7 Maestro Mario Humberto Pérez" /></div>
+  <h1>1°3 Bachiller con orientación en Informática</h1>
+  <p>Secundario N°7 “Maestro Mario Humberto Pérez” · Turno Tarde · Ciclo lectivo 2026</p>
+</header>
+
+<main class="container">
+
+  <section class="reveal">
+    <div class="grid-2">
+      <div class="card">
+        <h2>Cantidad de <em>alumnos</em></h2>
+        <!-- COMPLETAR: reemplazá _____ por la cantidad real de alumnos de 1°3ra -->
+        <p><span class="numero"></span>20</span></p>
+        <p>estudiantes en total</p>
+      </div>
+      <div class="card">
+        <h2>Foto grupal</h2>
+        <figure class="img-wrap">
+          <img src="imgens o videos/1°3° foto.jpeg" alt="Foto grupal de 1° Tercera" />
+          <figcaption class="img-badge">¡Orgullosos de nuestro grupo!</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <h2>Sobre el curso</h2>
+    <p>1° Tercera es un curso de primer año del turno tarde, correspondiente al Bachiller con orientación en Informática.</p>
+    <!-- COMPLETAR: agregá acá más párrafos sobre el grupo y sus proyectos.
+         Si tenés otra imagen, descomentá:
+    <figure class="img-wrap" style="margin-top:16px">
+      <img src="./imagen/1ro3img.jpeg" alt="Descripción de la imagen" />
+      <figcaption class="img-badge">Texto de la imagen</figcaption>
+    </figure>
+    -->
+  </section>
+
+  <section class="reveal">
+    <h2>Materias</h2>
+    <ul>
+      <li>Matemática</li>
+      <li>Lengua y Literatura</li>
+      <li>Historia</li>
+      <li>Geografía</li>
+      <li>Ciencias Biológicas</li>
+      <li>Inglés</li>
+      <li>Formación Ética y Ciudadana</li>
+      <li>Artes Visuales</li>
+      <li>Música</li>
+      <li>Tecnología</li>
+      <li>Educación Física</li>
+    </ul>
+  </section>
+
+  <section class="reveal">
+    <h2>Horario semanal</h2>
+    <div class="tabla">
+      <table>
+        <thead>
+          <tr><th>Hora</th><th>Lunes</th><th>Martes</th><th>Miércoles</th><th>Jueves</th><th>Viernes</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>13:30 - 14:10</td><td>Matemática</td><td>Artes Visuales</td><td>Formación Ética y Ciudadana</td><td>Geografía</td><td>Música</td></tr>
+          <tr><td>14:10 - 14:50</td><td>Matemática</td><td>Artes Visuales</td><td>Formación Ética y Ciudadana</td><td>Geografía</td><td>Música</td></tr>
+          <tr><td>15:00 - 15:40</td><td>Ciencias Biológicas</td><td>Lengua y Literatura</td><td>Inglés</td><td>Ciencias Biológicas</td><td>Matemática</td></tr>
+          <tr><td>15:40 - 16:20</td><td>Ciencias Biológicas</td><td>Lengua y Literatura</td><td>Inglés</td><td>Ciencias Biológicas</td><td>Matemática</td></tr>
+          <tr><td>16:30 - 17:10</td><td>Historia</td><td>Inglés</td><td>Matemática</td><td>Lengua y Literatura</td><td>Geografía</td></tr>
+          <tr><td>17:10 - 17:50</td><td>Historia</td><td>Tecnología</td><td>Historia</td><td>Lengua y Literatura</td><td>Geografía</td></tr>
+          <tr><td>17:50 - 18:30</td><td>Tecnología</td><td>Tecnología</td><td>Historia</td><td>Formación Ética y Ciudadana</td><td>Lengua y Literatura</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <h2>Profesores</h2>
+    <div class="tabla">
+      <table>
+        <thead><tr><th>Materia</th><th>Profesor</th></tr></thead>
+        <tbody>
+          <tr><td>Matemática</td><td>Patricia Cozzi</td></tr>
+          <tr><td>Lengua y Literatura</td><td>Anahí Cruz Soruco</td></tr>
+          <tr><td>Historia</td><td>Marcela Ramos</td></tr>
+          <tr><td>Geografía</td><td>Gladis Paredes</td></tr>
+          <tr><td>Ciencias Biológicas</td><td>Hermógenes Choque (Supl. Nadia Geronimo)</td></tr>
+          <tr><td>Inglés</td><td>Silvana Gelmetti</td></tr>
+          <tr><td>Formación Ética y Ciudadana</td><td>Verónica Parrón</td></tr>
+          <tr><td>Artes Visuales</td><td>Mateo Torres (Supl. Melany Mamaní)</td></tr>
+          <tr><td>Música</td><td>Nilda Zapata</td></tr>
+          <tr><td>Tecnología</td><td>Ariel Casasola</td></tr>
+          <tr><td>Educación Física</td><td>Carmen Guerrero</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <div class="grid-2">
+      <div class="card">
+        <h2>Información del curso</h2>
+        <ul>
+          <li><strong>Curso:</strong> 1° Año - División: Tercera</li>
+          <li><strong>Turno:</strong> Tarde</li>
+          <li><strong>Ciclo lectivo:</strong> 2026</li>
+          <li><strong>Colegio:</strong> Secundario N°7 Maestro Mario Humberto Pérez</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>Objetivos del curso</h2>
+        <ol>
+          <li>Aprender y fortalecer los conocimientos.</li>
+          <li>Trabajar en equipo.</li>
+          <li>Respetar a los compañeros y profesores.</li>
+          <li>Participar en actividades escolares.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <h2>Actividades</h2>
+    <ul>
+      <li>Feria de Ciencias.</li>
+      <li>Educación Física.</li>
+      <li>Actos escolares.</li>
+      <li>Proyectos grupales.</li>
+      <li>Salidas educativas.</li>
+      <li>Fiesta Nacional de los Estudiantes.</li>
+    </ul>
+  </section>
+
+  <section class="reveal">
+    <h2>Nuestra institución</h2>
+    <iframe title="Mapa del Secundario N°7"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3633.7987430190883!2d-65.13137872551147!3d-24.38830367824049!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x941bace4fec5f50f%3A0x74ae3ed4be7036!2sColegio%20Secundario%20N%C2%B07%20%22Mtro.%20Mario%20H.%20Perez%22!5e0!3m2!1ses-419!2sar!4v1788811942967!5m2!1ses-419!2sar"
+      allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"
+      style="width:100%;height:320px;border:1px solid var(--verde-3);border-radius:14px"></iframe>
+    <a class="btn" href="index.html">Volver al inicio</a>
+  </section>
+
+</main>
+
+<footer>1°3 · Secundario N°7 Maestro Mario Humberto Pérez · Ciclo lectivo 2026</footer>
+
+<script>
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        e.target.querySelectorAll('h2').forEach(h => h.classList.add('on'));
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
