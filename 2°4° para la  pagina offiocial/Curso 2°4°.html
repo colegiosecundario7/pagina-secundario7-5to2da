@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Escolar - 2° 4° Turno Tarde</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Encabezado con Logo del Colegio y Redes Sociales -->
+    <header>
+        <div class="contenedor-header">
+            <img src="OIP colegio N7.webp" alt="Escudo Colegio Secundario N° 7 Perico" class="logo-colegio">
+            <div class="texto-header">
+                <h1>Colegio Secudario n7</h1>
+                <p>Curso: 2° 4° (Segunda Cuarta) - Bachiller con Orientación en Informática</p>
+            </div>
+        </div>
+        
+        <nav>
+            <a href="#curso-24" class="btn-nav">2° 4° (Información)</a>
+            <a href="#horario-semanal" class="btn-nav">Horario Semanal</a>
+            <a href="#proyectos" class="btn-nav">Proyectos</a>
+            <a href="https://www.facebook.com/profile.php?id=100057082345529" target="_blank" rel="noopener noreferrer" class="btn-nav btn-facebook">
+                📘 Facebook Oficial
+            </a>
+        </nav>
+    </header>
+
+    <main class="contenedor">
+
+        <!-- FOTO GENERAL DE LA ESCUELA -->
+        <section class="seccion-foto-institucional">
+            <h2 class="seccion-titulo" style="text-align: center;">Fotografía Institucional / General</h2>
+            
+            <div class="bloque-foto-centrado">
+                <div class="contenedor-foto-grupo foto-ampliable">
+                    <img src="colegio secudario n7.jpg" alt="Colegio Secundario N° 7 Maestro Mario H. Pérez" onclick="abrirImagen(this.src, this.alt)">
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE INFORMACIÓN DEL CURSO -->
+        <h2 class="seccion-titulo">Información del Curso</h2>
+        
+        <div class="cursos-grid">
+
+            <!-- CURSO: 2° 4° -->
+            <article class="tarjeta-curso" id="curso-24" style="width: 100%;">
+                <h3>2° 4° (Segunda Cuarta) - Turno Tarde</h3>
+                
+                <div class="bloque-foto-centrado">
+                    <div class="contenedor-foto-grupo foto-ampliable">
+                        <img src="WhatsApp Image 2026-10-01 at 19.23.17.jpeg" alt="Aula de 2° 4° Turno Tarde" onclick="abrirImagen(this.src, this.alt)">
+                    </div>
+                </div>
+
+                <div class="datos-principales">
+                    <p><strong>Orientación:</strong> Bachiller con Orientación en Informática (RES.7621 E-17)</p>
+                    <p><strong>Turno:</strong> Tarde (13:30 a 18:30 hs)</p>
+                </div>
+
+                <h4 style="margin-top: 25px; margin-bottom: 10px; color: var(--color-principal);">Materias y Docentes del Curso:</h4>
+                
+                <!-- GRILLA PROLIJA DE MATERIAS EN 2 COLUMNAS -->
+                <div class="lista-materias">
+
+                    <div class="tarjeta-materia">
+                        <h5>📌 Geografía</h5>
+                        <p><strong>Profesor/a:</strong> Ocedo, Genoveba <br><small>Supl. Gaspar, Sandra</small></p>
+                    </div>
+
+                    <div class="tarjeta-materia">
+                        <h5>📌 Historia</h5>
+                        <p><strong>Profesor/a:</strong> Vega, Griselda</p>
+                    </div>
+
+                    <div class="tarjeta-materia">
+                        <h5>📌 Formación Ética y Ciudadana</h5>
+                        <p><strong>Profesor/a:</strong> Parrón, Verónica</p>
+                    </div>
+
+                    <div class="tarjeta-materia">
+                        <h5>📌 Ciencias Biológicas</h5>
+                        <p><strong>Profesor/a:</strong> Chalco, Zoé</p>
+                    </div>
+
+                    <div class="tarjeta-materia">
+                        <h5>📌 Teatro</h5>
+                        <p><strong>Profesor/a:</strong> Guanactolay, Elizabeth</p>
+                    </div>
+
+                    <div class="tarjeta-materia">
+                        <h5>📌 Matemática</h5>
+                        <p><strong>Profesor/a:</strong> Rodriguez, Rubén</p>
+                    </div>
+
+                    <div class="tarjeta-materia">
+                        <h5>📌 Lengua y Literatura</h5>
+                        <p><strong>Profesor/a:</strong> Churquina, Irma</p>
+                    </div>
+
+                    <div class="tarjeta-materia">
+                        <h5>📌 Inglés</h5>
+                        <p><strong>Profesor/a:</strong> Ramos, Virginia</p>
+                    </div>
+
+                    <div class="tarjeta-materia">
+                        <h5>📌 Danza</h5>
+                        <p><strong>Profesor/a:</strong> Quispe, Denis</p>
+                    </div>
+
+                    <div class="tarjeta-materia">
+                        <h5>📌 Tecnología</h5>
+                        <p><strong>Profesor/a:</strong> Casasola, Ariel</p>
+                    </div>
+
+                </div>
+            </article>
+
+        </div>
+
+        <!-- SECCIÓN DE TABLA DE HORARIO SEMANAL -->
+        <section id="horario-semanal">
+            <h2 class="seccion-titulo">Tabla de Horario Semanal</h2>
+
+            <h3 style="margin-bottom: 15px;">2° 4° (Turno Tarde) - Orientación en Informática</h3>
+            <div class="contenedor-tabla-horario">
+                <table class="tabla-horario">
+                    <thead>
+                        <tr>
+                            <th>Horario</th>
+                            <th>Lunes</th>
+                            <th>Martes</th>
+                            <th>Miércoles</th>
+                            <th>Jueves</th>
+                            <th>Viernes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>13:30 a 14:10</td>
+                            <td rowspan="2">GEOGRAFÍA<br><small>Ocedo, Genoveba<br>Supl. Gaspar, Sandra</small></td>
+                            <td rowspan="2">GEOGRAFÍA<br><small>Ocedo, Genoveba<br>Supl. Gaspar, Sandra</small></td>
+                            <td rowspan="2">CS. BIOL.<br><small>Chalco, Zoé</small></td>
+                            <td rowspan="2">FOR. E. Y C.<br><small>Parrón, Verónica</small></td>
+                            <td rowspan="2">LENG. Y LITER.<br><small>Churquina, Irma</small></td>
+                        </tr>
+                        <tr>
+                            <td>14:10 a 14:50</td>
+                        </tr>
+                        <tr>
+                            <td>15:00 a 15:40</td>
+                            <td rowspan="2">HISTORIA<br><small>Vega, Griselda</small></td>
+                            <td rowspan="2">TEATRO<br><small>Guanactolay, Elizabeth</small></td>
+                            <td rowspan="2">HISTORIA<br><small>Vega, Griselda</small></td>
+                            <td rowspan="2">MATEMÁTICA<br><small>Rodriguez, Rubén</small></td>
+                            <td rowspan="2">MATEMÁTICA<br><small>Rodriguez, Rubén</small></td>
+                        </tr>
+                        <tr>
+                            <td>15:40 a 16:20</td>
+                        </tr>
+                        <tr>
+                            <td>16:30 a 17:10</td>
+                            <td>FOR. E. Y C.<br><small>Parrón, Verónica</small></td>
+                            <td>MATEMÁTICA<br><small>Rodriguez, Rubén</small></td>
+                            <td>LENG. Y LITER.<br><small>Churquina, Irma</small></td>
+                            <td rowspan="2">LENG. Y LITER.<br><small>Churquina, Irma</small></td>
+                            <td rowspan="2">TECNOLOGÍA<br><small>Casasola, Ariel</small></td>
+                        </tr>
+                        <tr>
+                            <td>17:10 a 17:50</td>
+                            <td rowspan="2">CS. BIOL.<br><small>Chalco, Zoé</small></td>
+                            <td rowspan="2">INGLÉS<br><small>Ramos, Virginia</small></td>
+                            <td rowspan="2">DANZA<br><small>Quispe, Denis</small></td>
+                        </tr>
+                        <tr>
+                            <td>17:50 a 18:30</td>
+                            <td>TECNOLOGÍA<br><small>Casasola, Ariel</small></td>
+                            <td>INGLÉS<br><small>Ramos, Virginia</small></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE PROYECTOS -->
+        <section id="proyectos">
+            <h2 class="seccion-titulo">Proyectos Escolares</h2>
+            <div class="contenedor-proyectos">
+                <article class="tarjeta-proyecto">
+                    <h3>Proyecto 1: Elección de la Reina</h3>
+                    <p>Participación de los alumnos en el armado y elaboración de arreglos para la decoración del evento institucional.</p>
+                </article>
+                <article class="tarjeta-proyecto">
+                    <h3>Proyecto 2: Viaje Cultural a Jujuy</h3>
+                    <p>Salida pedagógica y recreativa enfocada en conocer la historia, tradiciones y riqueza cultural de la provincia.</p>
+                </article>
+                <article class="tarjeta-proyecto">
+                    <h3>Proyecto 3: Torneo Deportivo</h3>
+                    <p>Jornadas de integración deportiva en atletismo, vóley y fútbol escolar.</p>
+                </article>
+            </div>
+
+            <div class="contenedor-boton-volver">
+                <a href="#" class="btn-volver">⬆ Volver al Menú Principal</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- VENTANA MODAL PARA EXPANDIR FOTOS (LIGHTBOX) -->
+    <div id="modal-imagen" class="modal-visor" onclick="cerrarImagen()">
+        <span class="cerrar-modal">&times;</span>
+        <img class="contenido-modal" id="imagen-ampliada" alt="Vista previa">
+        <div id="texto-modal" class="pie-modal"></div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Escuela Secundaria - Portal Académico</p>
+        <p style="margin-top: 8px;">
+            <a href="https://www.facebook.com/profile.php?id=100057082345529" target="_blank" rel="noopener noreferrer" class="link-footer-fb">
+                Visita nuestra página oficial en Facebook 🌐
+            </a>
+        </p>
+    </footer>
+
+    <!-- SCRIPT DE JAVASCRIPT PARA EL ZOOM DE FOTOS -->
+    <script>
+        function abrirImagen(ruta, texto) {
+            var modal = document.getElementById("modal-imagen");
+            var imgAmpliada = document.getElementById("imagen-ampliada");
+            var textoModal = document.getElementById("texto-modal");
+            
+            modal.style.display = "flex";
+            imgAmpliada.src = ruta;
+            textoModal.innerText = texto;
+        }
+
+        function cerrarImagen() {
+            document.getElementById("modal-imagen").style.display = "none";
+        }
+    </script>
+
+</body>
+</html>

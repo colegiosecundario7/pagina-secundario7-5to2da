@@ -1,0 +1,436 @@
+/* =========================================================
+   VARIABLES DE COLOR Y CONFIGURACIÓN GLOBAL
+   ========================================================= */
+:root {
+    --color-fondo: #ffffff;
+    --color-tarjeta: #f9f9f9;
+    --color-texto: #1a1a1a;
+    --color-texto-suave: #666666;
+    --color-borde: #cccccc;
+    --color-indicador: #555555;
+    --color-principal: #1b5e20;
+    --color-secundario: #2e7d32;
+    --color-facebook: #1877f2;
+    --fuente-principal: Roboto, Arial, Helvetica, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Desplazamiento suave para la navegación */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--fuente-principal);
+    margin: 0;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.6;
+    padding-bottom: 40px;
+}
+
+/* =========================================================
+   ENCABEZADO, LOGO Y NAVEGACIÓN
+   ========================================================= */
+header {
+    background-color: var(--color-secundario);
+    color: #ffffff;
+    text-align: center;
+    padding: 30px 20px;
+    border-bottom: 2px solid var(--color-principal);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.contenedor-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.logo-colegio {
+    width: 90px;
+    height: auto;
+    border-radius: 8px;
+    background-color: #ffffff;
+    padding: 4px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.logo-colegio:hover {
+    transform: scale(1.08) rotate(-2deg);
+}
+
+.texto-header {
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.btn-nav {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 8px 16px;
+    border: 2px solid #ffffff;
+    border-radius: 6px;
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+
+.btn-nav:hover {
+    background-color: #ffffff;
+    color: var(--color-principal);
+    transform: translateY(-3px);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo destacado para el botón de Facebook */
+.btn-facebook {
+    background-color: var(--color-facebook);
+    border-color: var(--color-facebook);
+}
+
+.btn-facebook:hover {
+    background-color: #ffffff;
+    color: var(--color-facebook);
+    border-color: #ffffff;
+}
+
+.contenedor {
+    max-width: 1300px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.seccion-titulo {
+    border-bottom: 2px solid var(--color-borde);
+    padding-bottom: 8px;
+    margin: 30px 0 20px 0;
+    color: var(--color-principal);
+}
+
+/* =========================================================
+   MARCO Y FOTOGRAFÍA (Ajuste exacto + Centrado garantizado)
+   ========================================================= */
+.bloque-foto-centrado {
+    width: 100%;
+    text-align: center;
+}
+
+.contenedor-foto-grupo {
+    display: inline-block;
+    max-width: 100%;
+    border: 2px dashed var(--color-indicador);
+    background-color: #f0f0f0;
+    padding: 6px;
+    margin: 15px auto 25px auto;
+    border-radius: 8px;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+.foto-ampliable {
+    cursor: pointer;
+}
+
+.foto-ampliable img {
+    display: block;
+    max-width: 100%;
+    max-height: 400px;
+    height: auto;
+    width: auto;
+    border-radius: 6px;
+    transition: transform 0.4s ease, filter 0.3s ease;
+}
+
+.foto-ampliable:hover img {
+    transform: scale(1.02);
+    filter: brightness(1.05);
+}
+
+/* =========================================================
+   GRILLA DE CURSOS
+   ========================================================= */
+.cursos-grid {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.tarjeta-curso {
+    flex: 1;
+    background-color: var(--color-tarjeta);
+    border: 1px solid var(--color-borde);
+    border-radius: 10px;
+    padding: 20px;
+    scroll-margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.tarjeta-curso:hover {
+    box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.tarjeta-curso h3 {
+    margin-bottom: 15px;
+    color: var(--color-secundario);
+    border-bottom: 1px solid var(--color-borde);
+    padding-bottom: 5px;
+    font-size: 1.4rem;
+}
+
+/* =========================================================
+   SECCIÓN DOCENTES Y MATERIAS (Organización prolija en 2 columnas)
+   ========================================================= */
+.lista-materias {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.tarjeta-materia {
+    background-color: var(--color-fondo);
+    border: 1px solid var(--color-borde);
+    border-left: 4px solid var(--color-secundario);
+    padding: 12px 15px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tarjeta-materia:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+.tarjeta-materia h5 {
+    font-size: 1.1rem;
+    color: var(--color-principal);
+    margin-bottom: 5px;
+}
+
+.tarjeta-materia p {
+    font-size: 0.9rem;
+    color: var(--color-texto-suave);
+}
+
+/* =========================================================
+   EFECTO DE TINTINEO PARA ACCESIBILIDAD (:target)
+   ========================================================= */
+@keyframes parpadeoAccesible {
+    0% {
+        outline: 6px solid #1b5e20;
+        background-color: #e8f5e9;
+        transform: scale(1.02);
+    }
+    50% {
+        outline: 6px solid #ff9800;
+        background-color: #fff3e0;
+        transform: scale(1.02);
+    }
+    100% {
+        outline: 6px solid #1b5e20;
+        background-color: #e8f5e9;
+        transform: scale(1.02);
+    }
+}
+
+.tarjeta-curso:target {
+    animation: parpadeoAccesible 0.8s ease-in-out 3;
+    border-radius: 10px;
+}
+
+/* =========================================================
+   MODAL / VISOR DE FOTOS AMPLIADAS (LIGHTBOX)
+   ========================================================= */
+.modal-visor {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    animation: fadeIn 0.3s ease;
+}
+
+.contenido-modal {
+    max-width: 90%;
+    max-height: 80vh;
+    border-radius: 8px;
+    box-shadow: 0px 4px 20px rgba(255, 255, 255, 0.2);
+    animation: zoomIn 0.3s ease;
+}
+
+.pie-modal {
+    color: #ffffff;
+    margin-top: 15px;
+    font-size: 1.1rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+.cerrar-modal {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.cerrar-modal:hover {
+    color: #ff9800;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.8); }
+    to { transform: scale(1); }
+}
+
+/* =========================================================
+   TABLA DE HORARIOS Y PROYECTOS
+   ========================================================= */
+.contenedor-tabla-horario {
+    margin: 25px 0;
+    overflow-x: auto;
+}
+
+.tabla-horario {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid var(--color-borde);
+    margin: 10px 0;
+}
+
+.tabla-horario th, 
+.tabla-horario td {
+    border: 1px solid var(--color-borde);
+    padding: 12px 15px;
+    text-align: center;
+}
+
+.tabla-horario th {
+    background-color: var(--color-secundario);
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.tabla-horario tr:nth-child(even) {
+    background-color: #f4f4f4;
+}
+
+.contenedor-proyectos {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin: 25px 0;
+}
+
+.tarjeta-proyecto {
+    flex: 1;
+    min-width: 280px;
+    background-color: var(--color-tarjeta);
+    border: 1px solid var(--color-borde);
+    border-radius: 10px;
+    padding: 20px;
+    border-top: 4px solid var(--color-principal);
+    transition: transform 0.3s ease;
+}
+
+.tarjeta-proyecto:hover {
+    transform: translateY(-4px);
+}
+
+.tarjeta-proyecto h3 {
+    margin-bottom: 10px;
+    color: var(--color-principal);
+}
+
+.contenedor-boton-volver {
+    text-align: center;
+    margin: 35px 0 15px 0;
+}
+
+.btn-volver {
+    display: inline-block;
+    text-decoration: none;
+    background-color: var(--color-secundario);
+    color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.btn-volver:hover {
+    background-color: var(--color-principal);
+    transform: scale(1.05);
+}
+
+footer {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+    border-top: 1px solid var(--color-borde);
+    color: var(--color-texto-suave);
+    font-size: 0.9rem;
+}
+
+.link-footer-fb {
+    color: var(--color-facebook);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.link-footer-fb:hover {
+    text-decoration: underline;
+}
+
+/* Adaptación para pantallas pequeñas */
+@media (max-width: 850px) {
+    .contenedor-header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .logo-colegio {
+        width: 75px;
+    }
+
+    .cursos-grid {
+        flex-direction: column;
+    }
+}
