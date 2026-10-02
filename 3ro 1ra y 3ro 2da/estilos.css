@@ -1,0 +1,294 @@
+/* ==============================
+   VARIABLES CSS
+   ============================== */
+
+:root {
+    --color-principal: #0f5313;
+    --color-secundario: #136821;
+    --color-fondo: #20bd4f;
+    --color-blanco: #ffffff;
+    --color-borde: #0e722c;
+    --color-hover: #39da76;
+    --color-texto: #222222;
+
+    --sombra: 0 4px 12px rgba(0, 0, 0, 0.18);
+    --radio: 10px;
+}
+
+/* ==============================
+   CONFIGURACIÓN GENERAL
+   ============================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.5;
+}
+
+/* ==============================
+   HEADER
+   ============================== */
+
+header {
+    background-color: var(--color-principal);
+    color: var(--color-blanco);
+    text-align: center;
+    padding: 25px;
+    box-shadow: var(--sombra);
+}
+
+header h1 {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+header p {
+    font-size: 20px;
+}
+
+/* ==============================
+   NAVEGACIÓN
+   ============================== */
+
+nav {
+    background-color: var(--color-secundario);
+    text-align: center;
+    padding: 14px;
+}
+
+nav a {
+    color: var(--color-blanco);
+    text-decoration: none;
+    margin: 0 20px;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 5px;
+
+    /* TRANSICIÓN */
+    transition: background-color 0.3s ease,
+                transform 0.3s ease;
+}
+
+/* PSEUDO-CLASE HOVER */
+
+nav a:hover {
+    background-color: var(--color-principal);
+    transform: scale(1.05);
+}
+
+/* PSEUDO-CLASE FOCUS */
+
+nav a:focus {
+    outline: 3px solid #31ce60;
+    outline-offset: 3px;
+}
+
+/* ==============================
+   CONTENIDO PRINCIPAL
+   ============================== */
+
+main {
+    width: 95%;
+    max-width: 1400px;
+    margin: 30px auto;
+}
+
+section {
+    background-color: var(--color-blanco);
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--color-principal);
+}
+
+/* ==============================
+   TABLA DEL HORARIO
+   ============================== */
+
+.tabla-contenedor {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+th,
+td {
+    border: 2px solid var(--color-borde);
+    padding: 12px 8px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+thead th {
+    background-color: var(--color-principal);
+    color: var(--color-blanco);
+    font-size: 16px;
+}
+
+tbody th {
+    background-color: #3ff56d;
+    width: 130px;
+    font-size: 13px;
+}
+
+td {
+    font-size: 13px;
+    height: 65px;
+
+    /* TRANSICIÓN */
+    transition: background-color 0.3s ease,
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+/* EFECTO DE INTERACCIÓN EN LAS MATERIAS */
+
+td:hover {
+    background-color: var(--color-hover);
+    transform: scale(1.02);
+    box-shadow: var(--sombra);
+    position: relative;
+    z-index: 2;
+}
+
+td strong {
+    display: block;
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+td small {
+    font-size: 11px;
+}
+
+/* ==============================
+   INFORMACIÓN
+   ============================== */
+
+#informacion {
+    text-align: center;
+}
+
+#informacion p {
+    margin: 10px 0;
+}
+
+/* ==============================
+   FOOTER
+   ============================== */
+
+footer {
+    background-color: var(--color-principal);
+    color: var(--color-blanco);
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+/* ==============================
+   RESPONSIVE - TABLET
+   ============================== */
+
+@media (max-width: 900px) {
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    nav a {
+        margin: 0 8px;
+    }
+
+    main {
+        width: 97%;
+    }
+
+    section {
+        padding: 18px;
+    }
+
+    table {
+        min-width: 850px;
+    }
+}
+
+/* ==============================
+   RESPONSIVE - CELULAR
+   ============================== */
+
+@media (max-width: 600px) {
+
+    header {
+        padding: 18px;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    header p {
+        font-size: 17px;
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    nav a {
+        margin: 0;
+        font-size: 14px;
+    }
+
+    main {
+        width: 98%;
+        margin: 15px auto;
+    }
+
+    section {
+        padding: 12px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    /*
+       La tabla mantiene su tamaño y permite
+       desplazamiento horizontal en celulares.
+    */
+
+    .tabla-contenedor {
+        overflow-x: auto;
+    }
+
+    table {
+        min-width: 850px;
+    }
+}

@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Curso - 3ro 1ra</title>
+
+    <style>
+
+        /* ===== ESTILO GENERAL ===== */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f0fdf4;
+            color: #172b1b;
+        }
+
+
+        /* ===== ENCABEZADO ===== */
+
+        header {
+            background: linear-gradient(135deg, #16a34a, #15803d);
+            color: white;
+            text-align: center;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .nombre-curso {
+            margin: 0 0 10px 0;
+            font-size: 40px;
+        }
+
+        .preceptor {
+            margin: 0;
+            font-size: 18px;
+        }
+
+
+        /* ===== CONTENIDO ===== */
+
+        main {
+            width: 95%;
+            max-width: 1200px;
+            margin: 30px auto;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            color: #15803d;
+            font-size: 28px;
+        }
+
+
+        /* ===== HORARIO ===== */
+
+        .horario {
+            background-color: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            overflow-x: auto;
+        }
+
+        .tabla-horario {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .tabla-horario th {
+            background-color: #15803d;
+            color: white;
+            padding: 15px;
+            font-size: 15px;
+        }
+
+        .tabla-horario td {
+            border: 1px solid #bbf7d0;
+            padding: 15px;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        /* Columna de horarios */
+
+        .tabla-horario td:first-child {
+            background-color: #dcfce7;
+            color: #166534;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        /* Efecto al pasar el mouse */
+
+        .tabla-horario tr:hover td {
+            background-color: #f0fdf4;
+        }
+
+        .tabla-horario tr:hover td:first-child {
+            background-color: #bbf7d0;
+        }
+
+
+        /* ===== PROYECTOS ===== */
+
+        .contenedor-proyectos {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .tarjeta-proyecto {
+            background-color: white;
+            padding: 25px;
+            flex: 1 1 300px;
+            border-radius: 12px;
+            border-left: 5px solid #16a34a;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+            transition: 0.2s;
+        }
+
+        .tarjeta-proyecto:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .tarjeta-proyecto h3 {
+            margin-top: 0;
+            color: #15803d;
+        }
+
+        .tarjeta-proyecto p {
+            line-height: 1.6;
+        }
+
+
+        /* ===== BOTÓN ===== */
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 20px;
+        }
+
+        .boton-menu {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #16a34a;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+
+            transition: 0.2s;
+        }
+
+        .boton-menu:hover {
+            background-color: #15803d;
+            transform: scale(1.05);
+        }
+
+
+        /* ===== CELULAR ===== */
+
+        @media (max-width: 700px) {
+
+            .nombre-curso {
+                font-size: 30px;
+            }
+
+            .horario {
+                padding: 15px;
+            }
+
+            .tabla-horario th,
+            .tabla-horario td {
+                padding: 10px;
+                font-size: 12px;
+            }
+
+            .preceptor {
+                font-size: 15px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ===== ENCABEZADO ===== -->
+
+    <header class="encabezado-curso">
+
+        <h1 class="nombre-curso">
+            3ro 1ra
+        </h1>
+
+        <p class="preceptor">
+            Preceptor/Tutor: VAZQUES MARIO
+        </p>
+
+    </header>
+
+
+
+    <main>
+
+
+        <!-- ===== HORARIO SEMANAL ===== -->
+
+        <section class="horario">
+
+            <h2>Horario Semanal</h2>
+
+
+            <table class="tabla-horario">
+
+                <thead>
+
+                    <tr>
+
+                        <th>Horario</th>
+
+                        <th>Lunes</th>
+
+                        <th>Martes</th>
+
+                        <th>Miércoles</th>
+
+                        <th>Jueves</th>
+
+                        <th>Viernes</th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+
+                    <tr>
+
+                        <td>08:00 - 09:20</td>
+
+                        <td>CS. BIOL.</td>
+
+                        <td>CONSTR. P/ LA C.</td>
+
+                        <td>LENG. Y LITER.</td>
+
+                        <td>ARTS. VISUALES Y CONT.</td>
+
+                        <td>HISTORIA</td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>09:30 - 10:50</td>
+
+                        <td>HISTORIA</td>
+
+                        <td>LENG. Y LITER.</td>
+
+                        <td>GEOGRAFÍA</td>
+
+                        <td>GEOGRAFÍA</td>
+
+                        <td>MATEMÁTICA</td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>11:00 - 11:40</td>
+
+                        <td>ARTS. VISUALES Y CONT.</td>
+
+                        <td>ARTS. VISUALES</td>
+
+                        <td>CS. FÍSICO QUÍMICA</td>
+
+                        <td>MATEMÁTICA</td>
+
+                        <td>INGLÉS</td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>11:40 - 12:20</td>
+
+                        <td>CONSTR. P/ LA C.</td>
+
+                        <td>ARTS. VISUALES</td>
+
+                        <td>CS. FÍSICO QUÍMICA</td>
+
+                        <td>MATEMÁTICA</td>
+
+                        <td>INGLÉS</td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>12:20 - 13:00</td>
+
+                        <td>HIST. DE LAS ART. VISUALES</td>
+
+                        <td>ARTS. VISUALES</td>
+
+                        <td>HIST. DE LAS ART. VISUALES</td>
+
+                        <td>INGLÉS</td>
+
+                        <td>CS. BIOL.</td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>13:00 - 13:40</td>
+
+                        <td>HIST. DE LAS ART. VISUALES</td>
+
+                        <td>ARTS. VISUALES</td>
+
+                        <td>HIST. DE LAS ART. VISUALES</td>
+
+                        <td>INGLÉS</td>
+
+                        <td>CS. BIOL.</td>
+
+                    </tr>
+
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+
+
+        <!-- ===== PROYECTOS EN CURSO ===== -->
+
+        <section>
+
+            <h2>Proyectos en Curso</h2>
+
+
+            <div class="contenedor-proyectos">
+
+
+                <article class="tarjeta-proyecto">
+
+                    <h3>Proyecto 1</h3>
+
+                    <p>
+                        Descripción breve del proyecto que se encuentra
+                        actualmente en desarrollo.
+                    </p>
+
+                    <p>
+                        <strong>Estado:</strong> En curso
+                    </p>
+
+                </article>
+
+
+
+                <article class="tarjeta-proyecto">
+
+                    <h3>Proyecto 2</h3>
+
+                    <p>
+                        Descripción breve de otro proyecto realizado
+                        por los estudiantes.
+                    </p>
+
+                    <p>
+                        <strong>Estado:</strong> En curso
+                    </p>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ===== PROYECTOS FINALIZADOS ===== -->
+
+        <section>
+
+            <h2>Proyectos Finalizados</h2>
+
+
+            <div class="contenedor-proyectos">
+
+
+                <article class="tarjeta-proyecto">
+
+                    <h3>Proyecto Finalizado 1</h3>
+
+                    <p>
+                        Descripción breve del proyecto que ya fue
+                        completado.
+                    </p>
+
+                    <p>
+                        <strong>Estado:</strong> Finalizado
+                    </p>
+
+                </article>
+
+
+
+                <article class="tarjeta-proyecto">
+
+                    <h3>Proyecto Finalizado 2</h3>
+
+                    <p>
+                        Descripción breve de otro proyecto que
+                        ya fue terminado.
+                    </p>
+
+                    <p>
+                        <strong>Estado:</strong> Finalizado
+                    </p>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ===== PIE DE PÁGINA ===== -->
+
+    <footer>
+
+        <a href="index.html" class="boton-menu">
+            Volver al Menú Principal
+        </a>
+
+    </footer>
+
+
+</body>
+
+</html>

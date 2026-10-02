@@ -1,0 +1,191 @@
+    /* ===== ESTILOS GENERALES ===== */
+
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: #f0fdf4;
+        color: #172b1b;
+    }
+
+    /* ===== ENCABEZADO ===== */
+
+    header {
+        background: linear-gradient(135deg, #16a34a, #15803d);
+        color: white;
+        padding: 30px;
+        margin-bottom: 30px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .encabezado-curso {
+        text-align: center;
+    }
+
+    .nombre-curso {
+        margin: 0 0 10px 0;
+        font-size: 38px;
+    }
+
+    .preceptor {
+        margin: 0;
+        font-size: 18px;
+        opacity: 0.9;
+    }
+
+    /* ===== CONTENIDO ===== */
+
+    main {
+        width: 95%;
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    section {
+        margin-bottom: 40px;
+    }
+
+    section h2 {
+        color: #15803d;
+        font-size: 26px;
+        margin-bottom: 18px;
+    }
+
+    /* ===== HORARIO ===== */
+
+    .horario {
+        background: white;
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        overflow-x: auto;
+    }
+
+    .tabla-horario {
+        width: 100%;
+        border-collapse: collapse;
+        overflow: hidden;
+        border-radius: 10px;
+    }
+
+    /* Encabezado de la tabla */
+
+    .tabla-horario th {
+        background: #15803d;
+        color: white;
+        padding: 15px;
+        font-size: 16px;
+    }
+
+    /* Celdas */
+
+    .tabla-horario td {
+        padding: 15px;
+        border: 1px solid #bbf7d0;
+        text-align: center;
+        vertical-align: middle;
+        font-size: 14px;
+    }
+
+    /* Columna de horarios */
+
+    .tabla-horario td:first-child {
+        background: #dcfce7;
+        color: #166534;
+        font-weight: bold;
+        white-space: nowrap;
+    }
+
+    /* Efecto al pasar el mouse */
+
+    .tabla-horario tr:hover td {
+        background: #f0fdf4;
+    }
+
+    .tabla-horario tr:hover td:first-child {
+        background: #bbf7d0;
+    }
+
+    /* ===== PROYECTOS ===== */
+
+    .contenedor-proyectos {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .tarjeta-proyecto {
+        background: white;
+        padding: 25px;
+        margin: 0;
+        flex: 1 1 300px;
+        border-radius: 12px;
+        border-left: 5px solid #16a34a;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .tarjeta-proyecto:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    }
+
+    .tarjeta-proyecto h3 {
+        margin-top: 0;
+        color: #15803d;
+    }
+
+    .tarjeta-proyecto p {
+        line-height: 1.6;
+    }
+
+    /* ===== BOTÓN ===== */
+
+    footer {
+        text-align: center;
+        padding: 30px;
+        margin-top: 20px;
+    }
+
+    .boton-menu {
+        display: inline-block;
+        padding: 12px 25px;
+        background: #16a34a;
+        color: white;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: bold;
+        transition: background 0.2s, transform 0.2s;
+    }
+
+    .boton-menu:hover {
+        background: #15803d;
+        transform: scale(1.05);
+    }
+
+    /* ===== CELULAR ===== */
+
+    @media (max-width: 700px) {
+
+        .nombre-curso {
+            font-size: 30px;
+        }
+
+        .horario {
+            padding: 15px;
+        }
+
+        .tabla-horario th,
+        .tabla-horario td {
+            padding: 10px;
+            font-size: 12px;
+        }
+
+        .preceptor {
+            font-size: 15px;
+        }
+    }
