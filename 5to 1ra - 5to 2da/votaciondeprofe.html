@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Profesor del Mes - Secundario N°7 Maestro Mario Humberto Pérez</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,800;1,9..144,600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --verde:#0f3d2e;
+  --verde-2:#1d6b4d;
+  --verde-3:#cfe3d8;
+  --blanco:#ffffff;
+  --fondo:#f3f8f5;
+  --negro:#161a18;
+  --radio:14px;
+  --display:"Fraunces", Georgia, serif;
+  --texto:"DM Sans", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--texto);color:var(--negro);background:var(--fondo);line-height:1.7}
+
+/* Portada */
+.hero{
+  background:
+    radial-gradient(700px 300px at 85% 0%, rgba(255,255,255,.14), transparent 60%),
+    linear-gradient(160deg, var(--verde), #0a2a20);
+  color:var(--blanco);
+  padding:72px 6vw 88px;
+  text-align:center;
+}
+.hero{position:relative}
+.logo{
+  position:absolute;top:18px;left:18px;
+  width:84px;height:84px;border-radius:50%;
+  background:var(--blanco);border:3px solid var(--verde-3);
+  display:flex;align-items:center;justify-content:center;overflow:hidden;
+  box-shadow:0 6px 18px rgba(0,0,0,.25);
+}
+.logo img{width:100%;height:100%;object-fit:contain;padding:6px}
+@media(max-width:700px){
+  .logo{width:64px;height:64px;top:12px;left:12px}
+  .hero{padding-top:92px}
+}
+.hero h1{
+  font-family:var(--display);
+  font-weight:800;
+  font-size:clamp(2.2rem,6vw,4.2rem);
+  line-height:1.1;
+  margin:0 auto;
+  max-width:900px;
+  background:linear-gradient(100deg,#fff 0%,#fff 35%,#9fd6b8 50%,#fff 65%,#fff 100%);
+  background-size:250% 100%;
+  -webkit-background-clip:text;background-clip:text;
+  color:transparent;-webkit-text-fill-color:transparent;
+  animation:brillo 4.5s ease-in-out 1 both;
+}
+@keyframes brillo{from{background-position:100% 0}to{background-position:0 0}}
+.hero p{margin:18px auto 0;max-width:640px;color:var(--verde-3);font-size:1.02rem}
+
+.container{width:min(1080px,92vw);margin:-40px auto 60px;position:relative}
+
+/* Secciones */
+section{
+  background:var(--blanco);
+  border-radius:var(--radio);
+  border:1px solid var(--verde-3);
+  padding:28px;
+  margin-top:24px;
+  box-shadow:0 8px 28px rgba(15,61,46,.08);
+}
+h2{
+  font-family:var(--display);
+  font-weight:600;
+  font-size:clamp(1.4rem,3vw,1.9rem);
+  color:var(--verde);
+  margin:0 0 14px;
+  display:inline-block;
+  position:relative;
+  padding-bottom:8px;
+  letter-spacing:.2px;
+}
+h2::after{
+  content:"";position:absolute;left:0;bottom:0;height:3px;width:0;
+  background:linear-gradient(90deg,var(--verde),var(--verde-2),var(--verde-3));
+  border-radius:3px;transition:width .9s ease;
+}
+h2.on::after{width:100%}
+h2 em{font-style:italic;color:var(--verde-2)}
+
+p{margin:10px 0;color:#2c3a33}
+ul,ol{margin:0;padding-left:20px;color:#2c3a33;line-height:1.9}
+li::marker{color:var(--verde-2)}
+
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media(max-width:850px){.grid-2{grid-template-columns:1fr}}
+.card{
+  padding:20px;border-radius:var(--radio);
+  background:var(--fondo);border-left:5px solid var(--verde);
+}
+.card h2{font-size:1.3rem}
+
+.numero{font-family:var(--display);font-weight:800;font-size:3.6rem;color:var(--verde);line-height:1}
+
+/* Imágenes */
+.img-wrap{position:relative;margin:0;border-radius:var(--radio);overflow:hidden;background:var(--verde-3);border:1px solid var(--verde-3)}
+.img-wrap img{width:100%;height:320px;object-fit:cover;display:block;transition:transform .7s ease}
+.img-wrap:hover img{transform:scale(1.06)}
+.img-badge{
+  position:absolute;left:12px;bottom:12px;padding:8px 14px;border-radius:999px;
+  background:var(--verde);color:var(--blanco);font-size:.9rem;font-weight:500;
+}
+
+/* Tablas */
+.tabla{overflow:auto;border-radius:var(--radio);border:1px solid var(--verde-3)}
+table{width:100%;border-collapse:collapse;min-width:640px}
+th,td{padding:12px 14px;text-align:left;font-size:.94rem;border-bottom:1px solid var(--verde-3);vertical-align:top}
+th{background:var(--verde);color:var(--blanco);font-weight:700}
+tbody tr:nth-child(even){background:var(--fondo)}
+tbody tr:hover{background:#e3efe8}
+td:first-child{font-weight:700;color:var(--verde);white-space:nowrap}
+
+/* Botón */
+.btn{
+  display:inline-block;margin-top:20px;padding:12px 22px;border-radius:999px;
+  background:var(--verde);color:var(--blanco);text-decoration:none;font-weight:700;
+  transition:background .25s ease, transform .2s ease;
+}
+.btn:hover{background:var(--verde-2);transform:translateY(-2px)}
+.btn:focus-visible,a:focus-visible{outline:3px solid var(--verde-2);outline-offset:3px}
+
+/* Aparición */
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:none}
+
+footer{text-align:center;padding:0 0 40px;color:var(--verde-2);font-size:.9rem}
+
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  h2::after{transition:none;width:100%}
+  .hero h1{animation:none;-webkit-text-fill-color:#fff;color:#fff}
+  .img-wrap img{transition:none}
+}
+
+/* ===== Profesor del Mes ===== */
+.hero{padding-bottom:104px}
+.badges{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:26px}
+.badge{padding:8px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.08);color:#fff;font-weight:500;font-size:.92rem}
+.inicial{display:flex;align-items:center;justify-content:center;background:var(--verde-3);color:var(--verde);font-family:var(--display);font-weight:800}
+.lider{display:flex;align-items:center;gap:22px;background:var(--verde);color:#fff;border-radius:var(--radio);padding:22px;flex-wrap:wrap}
+.lider .av{width:112px;height:112px;border-radius:50%;object-fit:cover;border:4px solid var(--verde-3);font-size:2.4rem;flex:none}
+.lider small{color:var(--verde-3);letter-spacing:.12em;text-transform:uppercase;font-weight:700;font-size:.78rem}
+.lider h3{font-family:var(--display);font-weight:800;font-size:clamp(1.6rem,4vw,2.3rem);margin:4px 0}
+.lider p{margin:0;color:var(--verde-3)}
+.ranking{margin-top:22px;display:grid;gap:12px}
+.fila{display:grid;grid-template-columns:34px 1fr auto;gap:6px 12px;align-items:center}
+.fila .pos{font-family:var(--display);font-weight:800;font-size:1.3rem;color:var(--verde-2)}
+.fila .nom{font-weight:700;color:var(--verde)}
+.fila .nom span{font-weight:400;color:#54645b;font-size:.88rem;margin-left:6px}
+.fila .num{font-weight:700;color:var(--verde);font-size:.92rem}
+.pista{grid-column:2 / 4;height:14px;background:var(--verde-3);border-radius:999px;overflow:hidden}
+.relleno{height:100%;width:0;border-radius:999px;background:linear-gradient(90deg,var(--verde),var(--verde-2));transition:width .9s ease}
+.fila.primero .relleno{background:linear-gradient(90deg,var(--verde),#3f9a74)}
+.candidatos{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px;margin-top:6px}
+.cand{background:var(--fondo);border:1px solid var(--verde-3);border-radius:var(--radio);overflow:hidden;display:flex;flex-direction:column;transition:transform .25s ease,box-shadow .25s ease}
+.cand:hover{transform:translateY(-4px);box-shadow:0 10px 24px rgba(15,61,46,.15)}
+.cand .foto{width:100%;height:210px;object-fit:cover;font-size:3rem}
+.cand .info{padding:14px;display:flex;flex-direction:column;gap:4px;flex:1}
+.cand h3{font-family:var(--display);font-weight:600;font-size:1.15rem;margin:0;color:var(--verde)}
+.cand .mat{color:#54645b;font-size:.9rem;margin-bottom:10px}
+.votar{margin-top:auto;border:0;cursor:pointer;padding:11px 16px;border-radius:999px;background:var(--verde);color:#fff;font:700 .95rem var(--texto);transition:background .25s ease,transform .2s ease}
+.votar:hover:not(:disabled){background:var(--verde-2);transform:translateY(-2px)}
+.votar:disabled{background:var(--verde-3);color:var(--verde);cursor:default}
+.votar.mio{background:var(--verde-2);color:#fff}
+.aviso{margin-top:14px;padding:12px 16px;border-radius:12px;background:var(--fondo);border-left:5px solid var(--verde);color:var(--verde);font-weight:500}
+.vacio{color:#54645b}
+.fama{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}
+.fama .g{background:var(--verde);color:#fff;border-radius:var(--radio);padding:18px}
+.fama .g small{color:var(--verde-3)}
+.fama .g h3{font-family:var(--display);margin:6px 0 0;font-size:1.2rem}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="logo"><img src="./imagen/logo.sec7.jpeg" alt="Logo del Secundario N°7 Maestro Mario Humberto Pérez" /></div>
+  <h1>Profesor del Mes</h1>
+  <p id="mesTitulo">Votá a tu profe favorito</p>
+  <div class="badges">
+    <span class="badge">1 voto por persona</span>
+    <span class="badge">Se elige cada mes</span>
+    <span class="badge">Secundario N°7</span>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="reveal">
+    <h2>Va ganando</h2>
+    <div id="lider"></div>
+    <div class="ranking" id="ranking"></div>
+  </section>
+
+  <section class="reveal">
+    <h2>Votá a tu profe favorito</h2>
+    <p>Elegí con un solo toque. Podés votar una vez por mes.</p>
+    <div class="candidatos" id="candidatos"></div>
+    <div class="aviso" id="aviso" hidden></div>
+  </section>
+
+  <section class="reveal">
+    <h2>Cómo funciona</h2>
+    <ol>
+      <li>Cada mes se abre una nueva votación.</li>
+      <li>Cada persona vota una sola vez por mes.</li>
+      <li>La barra muestra quién va ganando en tiempo real.</li>
+      <li>A fin de mes se elige al Profesor del Mes.</li>
+    </ol>
+  </section>
+
+  <section class="reveal">
+    <h2>Salón de la fama</h2>
+    <div class="fama" id="fama"></div>
+    <a class="btn" href="index.html">Volver al inicio</a>
+  </section>
+
+</main>
+
+<footer>Profesor del Mes · Secundario N°7 Maestro Mario Humberto Pérez · Ciclo lectivo 2026</footer>
+
+<script>
+  /* ============================================================
+     EDITÁ ACÁ: los profesores. Para agregar uno, copiá una línea.
+     Las fotos van en la carpeta imagen/profes/
+     ============================================================ */
+  const PROFES = [
+    { id:'rodriguez-ruben',  nombre:'Rubén Rodríguez',  materia:'Informática',                    foto:'./imagen/profes/rodriguez-ruben.jpg' },
+    { id:'quispe-daniel',    nombre:'Daniel Quispe',    materia:'Programación',                   foto:'./imagen/profes/quispe-daniel.jpg' },
+    { id:'cardoso-gladis',   nombre:'Gladis Cardoso',   materia:'Matemática',                     foto:'./imagen/profes/cardoso-gladis.jpg' },
+    { id:'churquina-irma',   nombre:'Irma Churquina',   materia:'Lengua y Literatura',            foto:'./imagen/profes/churquina-irma.jpg' },
+    { id:'castillo-luis',    nombre:'Luis Castillo',    materia:'Inglés',                         foto:'./imagen/profes/castillo-luis.jpg' },
+    { id:'burgos-nidia',     nombre:'Nidia Burgos',     materia:'Psicología de las Organizaciones', foto:'./imagen/profes/burgos-nidia.jpg' },
+    { id:'vega-griselda',    nombre:'Griselda Vega',    materia:'Taller Integrador',              foto:'./imagen/profes/vega-griselda.jpg' },
+    { id:'orellano-carlos',  nombre:'Carlos Orellano',  materia:'Química',                        foto:'./imagen/profes/orellano-carlos.jpg' },
+    { id:'casasola-ariel',   nombre:'Ariel Casasola',   materia:'Tecnología',                     foto:'./imagen/profes/casasola-ariel.jpg' },
+    { id:'guevara-alejandro',nombre:'Alejandro Guevara',materia:'',                               foto:'./imagen/profes/guevara-alejandro.jpg' },
+    { id:'gelmetti-silvana', nombre:'Silvana Gelmetti', materia:'Inglés',                         foto:'./imagen/profes/gelmetti-silvana.jpg' },
+    { id:'janco-elena',      nombre:'Elena Janco',      materia:'',                               foto:'./imagen/profes/janco-elena.jpg' },
+    { id:'begarano-martin',  nombre:'Martin Begarano',  materia:'',                               foto:'./imagen/profes/begarano-martin.jpg' }
+  ];
+  /* Ganadores de meses anteriores. Ejemplo: { mes:'Octubre 2026', id:'cardoso-gladis' } */
+  const HISTORIAL = [];
+
+  /* NOTA: los votos se guardan en el navegador de cada persona (localStorage).
+     Para que todos vean los mismos totales hace falta una base de datos compartida. */
+  const hoy = new Date();
+  const clave = hoy.getFullYear() + '-' + String(hoy.getMonth() + 1).padStart(2, '0');
+  const K_VOTOS = 'pm-votos-' + clave, K_MIO = 'pm-mio-' + clave;
+  let mes = hoy.toLocaleDateString('es-AR', { month:'long', year:'numeric' });
+  mes = mes.charAt(0).toUpperCase() + mes.slice(1);
+  document.getElementById('mesTitulo').textContent = 'Votación de ' + mes + ' · Votá a tu profe favorito';
+
+  const leer = () => { try { return JSON.parse(localStorage.getItem(K_VOTOS)) || {}; } catch (e) { return {}; } };
+  const guardar = v => { try { localStorage.setItem(K_VOTOS, JSON.stringify(v)); } catch (e) {} };
+  const miVoto = () => { try { return localStorage.getItem(K_MIO); } catch (e) { return null; } };
+
+  function inicial(nombre, cls) {
+    const d = document.createElement('div');
+    d.className = cls + ' inicial';
+    d.textContent = nombre.split(' ').map(x => x[0]).slice(0, 2).join('');
+    return d;
+  }
+  window.inicial = inicial;
+  const foto = (p, cls) => `<img class="${cls}" src="${p.foto}" alt="Foto de ${p.nombre}" onerror="this.replaceWith(inicial('${p.nombre}','${cls}'))">`;
+  const plural = n => n + (n === 1 ? ' voto' : ' votos');
+
+  function pintar() {
+    const votos = leer(), mio = miVoto();
+    const lista = PROFES.map(p => ({ ...p, v: votos[p.id] || 0 })).sort((a, b) => b.v - a.v);
+    const total = lista.reduce((s, p) => s + p.v, 0);
+
+    // Líder
+    const L = document.getElementById('lider');
+    if (total === 0) {
+      L.innerHTML = '<p class="vacio">Todavía no hay votos este mes. ¡Sé el primero en votar!</p>';
+    } else {
+      const empate = lista[1] && lista[1].v === lista[0].v;
+      L.innerHTML = `<div class="lider">${foto(lista[0], 'av')}<div><small>${empate ? 'Empate en el primer lugar' : 'Va ganando'}</small><h3>${lista[0].nombre}</h3><p>${lista[0].materia ? lista[0].materia + ' · ' : ''}${plural(lista[0].v)}</p></div></div>`;
+    }
+
+    // Ranking con barras
+    document.getElementById('ranking').innerHTML = lista.map((p, i) => {
+      const pct = total ? Math.round(p.v * 100 / total) : 0;
+      return `<div class="fila ${i === 0 && total ? 'primero' : ''}"><span class="pos">${i + 1}°</span><span class="nom">${p.nombre}<span>${p.materia}</span></span><span class="num">${plural(p.v)} · ${pct}%</span><div class="pista"><div class="relleno" data-w="${pct}"></div></div></div>`;
+    }).join('');
+    requestAnimationFrame(() => document.querySelectorAll('.relleno').forEach(r => r.style.width = r.dataset.w + '%'));
+
+    // Candidatos
+    document.getElementById('candidatos').innerHTML = PROFES.map(p => {
+      const esMio = mio === p.id;
+      return `<article class="cand">${foto(p, 'foto')}<div class="info"><h3>${p.nombre}</h3><div class="mat">${p.materia}</div><button class="votar ${esMio ? 'mio' : ''}" data-id="${p.id}" ${mio ? 'disabled' : ''}>${esMio ? 'Tu voto' : 'Votar'}</button></div></article>`;
+    }).join('');
+    const aviso = document.getElementById('aviso');
+    aviso.hidden = !mio;
+    if (mio) aviso.textContent = 'Ya votaste este mes. ¡Gracias por participar! La próxima votación se abre el mes que viene.';
+  }
+
+  document.getElementById('candidatos').addEventListener('click', e => {
+    const b = e.target.closest('.votar');
+    if (!b || miVoto()) return;
+    const v = leer();
+    v[b.dataset.id] = (v[b.dataset.id] || 0) + 1;
+    guardar(v);
+    try { localStorage.setItem(K_MIO, b.dataset.id); } catch (err) {}
+    pintar();
+  });
+
+  // Salón de la fama
+  const F = document.getElementById('fama');
+  F.innerHTML = HISTORIAL.length
+    ? HISTORIAL.map(h => { const p = PROFES.find(x => x.id === h.id); return `<div class="g"><small>${h.mes}</small><h3>${p ? p.nombre : h.id}</h3></div>`; }).join('')
+    : '<p class="vacio">Todavía no hay ganadores. El primero se elige a fin de mes.</p>';
+
+  pintar();
+
+  // Aparición al hacer scroll
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      e.target.querySelectorAll('h2').forEach(h => h.classList.add('on'));
+      io.unobserve(e.target);
+    }
+  }), { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
