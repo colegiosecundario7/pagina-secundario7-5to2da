@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+  background-color: #f4f5f7;
+  color: #2b2f36;
+}
+
+/* ---------- Encabezado ---------- */
+.encabezado-curso {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: linear-gradient(135deg, #0c3826 0%, #14573d 100%);
+  color: #eee4e4;
+  padding: 18px 30px;
+  border-bottom: 4px solid #2ea376;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+.logo {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #eee4e4;
+  background-color: #ffffff;
+  flex-shrink: 0;
+}
+
+.encabezado-curso h1 {
+  margin: 0 0 4px 0;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.encabezado-curso p {
+  margin: 0;
+  font-size: 1rem;
+  color: #c9e8d9;
+}
+
+/* ---------- Contenido ---------- */
+main {
+  padding: 30px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+section h2 {
+  margin-bottom: 15px;
+  border-bottom: 2px solid #2ea376;
+  padding-bottom: 8px;
+  color: #0c3826;
+  font-weight: 600;
+}
+
+/* ---------- Horario ---------- */
+.tabla-scroll {
+  overflow-x: auto;
+  border-radius: 10px;
+  border: 1px solid #2ea376;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  background-color: #ffffff;
+}
+
+.horario {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0;
+}
+
+.horario th,
+.horario td {
+  border: 1px solid #d3ebe1;
+  padding: 12px;
+  text-align: center;
+}
+
+.horario th {
+  background-color: #0c3826;
+  color: #eee4e4;
+  font-weight: 600;
+  border-color: #0c3826;
+}
+
+.horario tbody tr:nth-child(even) {
+  background-color: #f1f8f5;
+}
+
+.horario tbody tr:hover {
+  background-color: #dff1e8;
+}
+
+.horario td:first-child {
+  font-weight: 600;
+  color: #0c3826;
+  white-space: nowrap;
+}
+
+/* ---------- Proyectos ---------- */
+.contenedor-proyectos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+.tarjeta-proyecto {
+  width: 280px;
+  background-color: #ffffff;
+  border: 1px solid #d3ebe1;
+  border-top: 5px solid #2ea376;
+  border-radius: 10px;
+  padding: 18px;
+  margin: 8px 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta-proyecto:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 18px rgba(12, 56, 38, 0.18);
+}
+
+.tarjeta-proyecto h3 {
+  margin-top: 0;
+  color: #0c3826;
+}
+
+.tarjeta-proyecto p {
+  margin: 6px 0;
+  color: #4a4f57;
+}
+
+/* ---------- Botón ---------- */
+#volver-menu {
+  text-align: center;
+}
+
+.boton-volver {
+  display: inline-block;
+  text-decoration: none;
+  padding: 12px 28px;
+  background-color: #2ea376;
+  color: #ffffff;
+  border-radius: 6px;
+  font-weight: 600;
+  box-shadow: 0 3px 8px rgba(46, 163, 118, 0.35);
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.boton-volver:hover {
+  background-color: #0c3826;
+  transform: translateY(-2px);
+}
+
+/* ---------- Pie ---------- */
+footer {
+  padding: 20px;
+  background-color: #0c3826;
+  color: #c9e8d9;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+footer p {
+  margin: 4px 0;
+}
+
+/* ---------- Celulares ---------- */
+@media (max-width: 600px) {
+
+  .encabezado-curso {
+    padding: 14px 15px;
+    gap: 14px;
+  }
+
+  .logo {
+    width: 55px;
+    height: 55px;
+  }
+
+  .encabezado-curso h1 {
+    font-size: 1.5rem;
+  }
+
+  .encabezado-curso p {
+    font-size: 0.85rem;
+  }
+
+  main {
+    padding: 20px 15px;
+  }
+
+  .horario {
+    white-space: nowrap;
+  }
+
+  .horario th,
+  .horario td {
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+
+  .contenedor-proyectos {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .tarjeta-proyecto {
+    width: 100%;
+  }
+
+  .boton-volver {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* ==========================================================
+   EFECTO: REVELADO POR SCROLL
+   ========================================================== */
+.revelar {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s ease;
+}
+
+.revelar.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tarjeta-proyecto.revelar.visible:hover {
+  transform: translateY(0) scale(1.05);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .revelar {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+.tarjeta-proyecto img {
+  display: block;
+  width: calc(100% + 36px);
+  height: 180px;
+  object-fit: cover;
+  margin: -18px -18px 14px -18px;
+  border-radius: 9px 9px 0 0;
+}

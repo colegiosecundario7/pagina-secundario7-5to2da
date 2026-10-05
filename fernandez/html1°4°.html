@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plantilla Curso</title>
+<link rel="stylesheet" href="css1º2º.css">
+</head>
+<body>
+
+  <header class="encabezado-curso">
+    <img src="LOGO7.jpg" alt="Logo del Colegio Secundario nº7" class="logo">
+    <div class="encabezado-texto">
+      <h1>1ro 4ta</h1>
+      <p>Preceptor/a a cargo: Frías David</p>
+    </div>
+  </header>
+
+  <main>
+
+    <section id="horario-semanal">
+      <h2>Horario Semanal</h2>
+
+      <table class="horario">
+        <thead>
+          <tr>
+            <th>Hora</th>
+            <th>Lunes</th>
+            <th>Martes</th>
+            <th>Miércoles</th>
+            <th>Jueves</th>
+            <th>Viernes</th>
+          </tr>
+        </thead>
+        <tbody>
+         
+          <tr>
+            <td>13:30 - 14:10</td>
+            <td>Musica</td>
+            <td>Lengua y Literatura</td>
+            <td>Ar. Visuales</td>
+            <td>For. E Y C.</td>
+            <td>cs. Biologicas</td>
+          </tr>
+          <tr>
+            <td>14:10 - 14:50</td>
+            <td>Musica</td>
+            <td>Lengua y Literatura</td>
+            <td>Ar. visuales</td>
+            <td>For. E Y C.</td>
+            <td>Cs.Biologicas</td>
+          </tr>
+           <tr>
+            <td>15:00 - 15:40</td>
+            <td>Historia</td>
+            <td>Matematica</td>
+            <td>Historia</td>
+            <td>Ingles</td>
+            <td>Lengua y Literatura</td>
+          </tr>
+          <tr>
+            <td>15:40 - 16:20</td>
+            <td>Historia</td>
+            <td>Matematica</td>
+            <td>Historia</td>
+            <td>Ingles</td>
+            <td>Lengua y Literatura</td>
+          </tr>
+          <tr>
+            <td>16:30 - 17:10</td>
+            <td>For. E. Y C.</td>
+            <td>Matematica</td>
+            <td>Tecnologia</td>
+            <td>cs. Biologicastd>
+            <td>Matematica</td>
+          </tr>
+          <tr>
+            <td>17:10 - 17:50</td>
+            <td>Geografia</td>
+            <td>Geografia</td>
+            <td>Tecnologia</td>
+            <td>cs. Biologicas</td>
+            <td>Matematica</td>
+          </tr>
+          <tr>
+            <td>17:50 - 18:30</td>
+            <td>Geografia</td>
+            <td>Geografia</td>
+            <td>Ingles</td>
+            <td>Lengua y Literatura</td>
+            <td>Tecnologia</td>
+          </tr>
+          <tr>
+             
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="proyectos-en-curso">
+      <h2>Proyectos en Curso</h2>
+
+      <div class="contenedor-proyectos">
+
+        <article class="tarjeta-proyecto revelar">
+          <h3>Nombre del proyecto 1</h3>
+          <p>Descripción breve del proyecto en curso.</p>
+          <p>Fecha de inicio: 00/00/0000</p>
+        </article>
+
+        <article class="tarjeta-proyecto revelar">
+          <h3>Nombre del proyecto 2</h3>
+          <p>Descripción breve del proyecto en curso.</p>
+          <p>Fecha de inicio: 00/00/0000</p>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="proyectos-finalizados">
+      <h2>Proyectos Finalizados</h2>
+
+      <div class="contenedor-proyectos">
+
+        <article class="tarjeta-proyecto revelar">
+          <h3>Nombre del proyecto 1</h3>
+          <p>Descripción breve del proyecto finalizado.</p>
+          <p>Fecha de entrega: 00/00/0000</p>
+        </article>
+
+        <article class="tarjeta-proyecto revelar">
+          <h3>Nombre del proyecto 2</h3>
+          <p>Descripción breve del proyecto finalizado.</p>
+          <p>Fecha de entrega: 00/00/0000</p>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="volver-menu">
+      <a href="#" class="boton-volver">Volver al menú principal</a>
+      
+    </section>
+
+  </main>
+
+  <script>
+    const elementos = document.querySelectorAll('.revelar');
+
+    const observer = new IntersectionObserver((entradas) => {
+      entradas.forEach(entrada => {
+        if (entrada.isIntersecting) {
+          entrada.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    elementos.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+
+<footer>
+    <p>Institución - Ciclo lectivo</p>
+    
+  </footer>
+
+</html>

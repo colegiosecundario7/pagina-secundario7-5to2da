@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f5f7;
+  color: #2b2f36;
+}
+
+.encabezado-curso {
+  background-color: #0c3826;
+  color: #eee4e4;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.encabezado-curso h1 {
+  margin: 0 0 8px 0;
+  font-size: 2rem;
+  letter-spacing: 0.5px;
+}
+
+.encabezado-curso p {
+  margin: 0;
+  font-size: 1rem;
+  color: #eee4e4;
+}
+
+main {
+  padding: 30px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+section h2 {
+  margin-bottom: 15px;
+  border-bottom: 2px solid #2ea376;
+  padding-bottom: 8px;
+  color: #1f2d3d;
+}
+
+.horario {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  border: 1px solid #2ea376;
+  background-color: #ffffff;
+}
+
+.horario th,
+.horario td {
+  border: 1px solid #2ea376;
+  padding: 12px;
+  text-align: center;
+}
+
+.horario th {
+  background-color: #0c3826;
+  color: #eee4e4;
+  font-weight: 600;
+}
+
+.horario tbody tr:nth-child(even) {
+  background-color: #f0f2f5;
+}
+
+.contenedor-proyectos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.tarjeta-proyecto {
+  width: 280px;
+  background-color: #ffffff;
+  border: 1px solid #2ea376;
+  border-radius: 10px;
+  padding: 18px;
+  margin: 8px 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+   transition: transform 0.3s ease;
+}
+
+.tarjeta-proyecto:hover {
+  transform: scale(1.05);
+}
+
+.tarjeta-proyecto h3 {
+  margin-top: 0;
+  color: #1f2d3d;
+}
+
+.tarjeta-proyecto p {
+  margin: 6px 0;
+  color: #4a4f57;
+}
+
+#volver-menu {
+  text-align: center;
+}
+
+.boton-volver {
+  display: inline-block;
+  text-decoration: none;
+  padding: 12px 28px;
+  background-color: #2ea376;
+  color: #ffffff;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.boton-volver:hover {
+  background-color: #33475c;
+}
+
+footer {
+  padding: 20px;
+  border-top: 1px solid #2ea376;
+  text-align: center;
+  color: #6b7280;
+}
+
+@media (max-width: 600px) {
+
+  .encabezado-curso {
+    padding: 20px 15px;
+  }
+
+  .encabezado-curso h1 {
+    font-size: 1.5rem;
+  }
+
+  main {
+    padding: 20px 15px;
+  }
+
+  .horario {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .horario th,
+  .horario td {
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+
+  .contenedor-proyectos {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .tarjeta-proyecto {
+    width: 100%;
+  }
+
+  .boton-volver {
+    width: 100%;
+    text-align: center;
+  }
+}
+/* ==========================================================
+   8. EFECTO: REVELADO POR SCROLL
+   ========================================================== */
+.revelar {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.revelar.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.tarjeta-proyecto.revelar.visible:hover {
+  transform: translateY(0) scale(1.05);
+}

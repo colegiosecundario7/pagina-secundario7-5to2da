@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Colegio Secundario nº7</title>
+<link rel="stylesheet" href="css1º1º.css">
+</head>
+<body>
+
+  <header class="encabezado-curso">
+    <img src="LOGO7.jpg" alt="Logo del Colegio Secundario nº7" class="logo">
+    <div class="encabezado-texto">
+      <h1>1ro 1ra</h1>
+      <p>Preceptor/a a cargo: Tolaba Orlando</p>
+    </div>
+  </header>
+
+  <main>
+    <section id="horario-semanal">
+      <h2>Horario Semanal</h2>
+
+      <div class="tabla-scroll">
+      <table class="horario">
+        <thead>
+          <tr>
+            <th>Hora</th>
+            <th>Lunes</th>
+            <th>Martes</th>
+            <th>Miércoles</th>
+            <th>Jueves</th>
+            <th>Viernes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>08:00 - 08:40</td>
+            <td>Lengua y Literatura</td>
+            <td>Musica</td>
+            <td>Lengua y Literatura</td>
+            <td>Historia</td>
+            <td>Matematica</td>
+          </tr>
+          <tr>
+            <td>08:40 - 09:20</td>
+            <td>Lengua y Literatura</td>
+            <td>Musica</td>
+            <td>Lengua y Literatura</td>
+            <td>Historia</td>
+            <td>Matematica</td>
+          </tr>
+          <tr>
+            <td>09:30 - 10:10</td>
+            <td>Geografia</td>
+            <td>Matematica</td>
+            <td>Ingles</td>
+            <td>Art.visuales</td>
+            <td>For. E. Y C.</td>
+          </tr>
+          <tr>
+            <td>10:10 - 10:50</td>
+            <td>Geografia</td>
+            <td>Matematica</td>
+            <td>Ingles</td>
+            <td>Art.visuales</td>
+            <td>For. E. Y C.</td>
+          </tr>
+          <tr>
+            <td>11:00 - 11:40</td>
+            <td>Historia</td>
+            <td>Lengua y Literatura</td>
+            <td>Tecnologia</td>
+            <td>For. E. Y C.</td>
+            <td>Cs.Biologicas</td>
+          </tr>
+          <tr>
+            <td>11:40 - 12:20</td>
+            <td>Historia</td>
+            <td>Geografia</td>
+            <td>Tecnologia</td>
+            <td>Cs.Biologicas</td>
+            <td>Cs.Biologicas</td>
+          </tr>
+          <tr>
+            <td>12:20 - 13:00</td>
+            <td>Tecnologia</td>
+            <td>Geografia</td>
+            <td>Matematica</td>
+            <td>Cs.Biologicas</td>
+            <td>Ingles</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+
+    
+
+    <section id="proyectos-finalizados">
+      <h2>Proyectos Finalizados</h2>
+
+      <div class="contenedor-proyectos">
+
+        <article class="tarjeta-proyecto revelar">
+          <img src="viaje tilcara/foto 1.jpeg" alt="">
+          <h3>Viaje a Tilcara</h3>
+        </article>
+
+        <article class="tarjeta-proyecto revelar">
+          <img src="viaje tilcara/foto 2.jpeg" alt="">
+          <h3>Cementerio de Jujuy</h3>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="volver-menu">
+      <a href="#" class="boton-volver">Volver al menú principal</a>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Institución - Ciclo lectivo</p>
+    <p>Hecho por:</p>
+    <p>Maximo Fernandez</p>
+    <p>Valentino Barrientos</p>
+    <p>Oscar Carmona</p>
+  </footer>
+
+  <script>
+    const elementos = document.querySelectorAll('.revelar');
+
+    const observer = new IntersectionObserver((entradas) => {
+      entradas.forEach(entrada => {
+        if (entrada.isIntersecting) {
+          entrada.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    elementos.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
