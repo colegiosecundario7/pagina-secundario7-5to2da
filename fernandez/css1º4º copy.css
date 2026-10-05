@@ -160,22 +160,24 @@ img {
 .encabezado-curso {
   background-color: #0c3826;
   color: #eee4e4;
-  text-align: center;
   padding: clamp(20px, 4vw, 30px) clamp(15px, 3vw, 20px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px 24px;
+  text-align: center;
 }
 
-.encabezado-curso h1 {
-  margin: 0 0 8px 0;
-  font-size: clamp(1.5rem, 4vw, 2rem);
-  letter-spacing: 0.5px;
+.logo {
+  width: clamp(64px, 14vw, 100px);
+  height: auto;
+  flex-shrink: 0;
 }
 
-.encabezado-curso p {
-  margin: 0;
-  font-size: 1rem;
-  color: #eee4e4;
+.encabezado-texto {
+  text-align: center;
 }
-
 /* ---------- Layout ---------- */
 main {
   padding: clamp(20px, 4vw, 30px) clamp(15px, 3vw, 20px);
