@@ -130,16 +130,32 @@ section{
     width: 100%;
     padding-bottom: 5px;
 }
-.menu li:hover{
-    background: var(--verde-claro);
-    color: var(--oscuro-violaceo);
+/* Botón "COLEGIO": se ve igual que el texto del menú */
+.sub-toggle{
+    background: none;
+    border: none;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+    text-align: inherit;
 }
-.menu li:hover ul{
-    display: flex;
+.sub-toggle::after{
+    content: none;
 }
-.menu li:hover ul li:hover{
-    background: var(--verde-hover);
-    color: var(--negro-menu);
+
+/* Hover del menú: solo en pantallas grandes */
+@media (min-width: 869px){
+    .menu li:hover{
+        background: var(--verde-claro);
+        color: var(--oscuro-violaceo);
+    }
+    .menu li:hover ul{
+        display: flex;
+    }
+    .menu li:hover ul li:hover{
+        background: var(--verde-hover);
+        color: var(--negro-menu);
+    }
 }
 
 /* ===== Botón hamburguesa (checkbox trick) ===== */
@@ -160,7 +176,7 @@ section{
 .carrusel{
     position: relative;
     width: 100%;
-    height: 545px;
+    height: 550px;
     overflow: hidden;
     background-color: var(--carrusel-fondo);
 }
@@ -255,6 +271,21 @@ section{
     height: 150px;
     background: radial-gradient(circle, var(--blob-beige), transparent 70%);
     border-radius: 50%;
+}
+.seccion-sgheader{
+    width: 100%;
+    padding: 30px 10px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.seccion-sgheader h2{
+    font-size: 2rem;
+    display: inline-block;
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--verde-claro);
+    position: relative;
+    z-index: 1;
 }
 .seccion-header h2{
     color: var(--beige-claro);
@@ -390,7 +421,7 @@ section{
     max-width: 1000px;
     margin: 35px auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
     gap: 25px;
 }
 .mv-card{
@@ -524,6 +555,44 @@ section{
     padding: 3px 10px;
     border-radius: 10px;
     margin-bottom: 10px;
+}
+
+.noticia-img{
+    display: block;
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 14px;
+}
+.card.noticia p{
+    line-height: 1.6;
+}
+
+/* Mensaje cuando no hay novedades cargadas */
+.sin-novedades{
+    width: 90%;
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 35px 20px;
+    text-align: center;
+    color: var(--verde-principal);
+    font-size: 1.1rem;
+    border: 2px dashed var(--sombra-card);
+    border-radius: 8px;
+    background: var(--fondo-suave);
+}
+.sin-novedades::before{
+    content: "\f1ea";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    display: block;
+    font-size: 2rem;
+    color: var(--verde-claro);
+    margin-bottom: 12px;
+}
+.sin-novedades[hidden]{
+    display: none;
 }
 
 /* ===== Texto institucional (Misión, Visión y Objetivos, Valores) ===== */
@@ -854,9 +923,9 @@ section{
     }
     .encabezado h1{
         margin-left: 55px;
-        margin-right: auto;
         font-size: 0.95rem;
         padding-left: 10px;
+    
     }
 
     /* Botón de 3 rayas visible en celular */
@@ -893,18 +962,52 @@ section{
         border-bottom: 1px solid var(--separador-menu);
     }
 
-    /* El submenú de COLEGIO queda siempre visible dentro del panel (sin hover) */
+    /* Submenú de COLEGIO: se despliega al tocar el botón */
+    .menu li.tiene-sub{
+        padding: 0;
+    }
+    .sub-toggle{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 14px 20px;
+        text-align: left;
+    }
+    .sub-toggle::after{
+        content: "\f078";
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        font-size: 0.75rem;
+        transition: transform 0.3s ease;
+    }
+    .menu li.abierto .sub-toggle::after{
+        transform: rotate(180deg);
+    }
     .menu ul{
         display: flex;
         position: static;
         background-color: var(--verde-oscuro);
-        padding: 8px 0 0 15px;
         min-width: 0;
-        margin-top: 10px;
+        margin: 0;
+        padding: 0 0 0 20px;
+        max-height: 0;
+        overflow: hidden;
+        visibility: hidden;
+        transition: max-height 0.3s ease, padding 0.3s ease, visibility 0.3s;
+    }
+    .menu li.abierto > ul{
+        max-height: 320px;
+        padding: 6px 0 6px 20px;
+        visibility: visible;
     }
     .menu ul li{
         border-bottom: none;
-        padding: 8px 0;
+        padding: 0;
+    }
+    .menu ul li a{
+        display: block;
+        padding: 11px 0;
     }
 
     .carrusel{
@@ -961,13 +1064,56 @@ section{
         text-align: center;
         padding: 15px;
     }
-    
+
+    /* Misión y Visión: tarjetas pensadas para celular */
+    .mv-grid{
+        width: 92%;
+        margin: 22px auto 30px;
+        gap: 16px;
+    }
+    .mv-card{
+        display: grid;
+        grid-template-columns: auto 1fr;
+        grid-template-areas:
+            "icono titulo"
+            "texto texto";
+        align-items: center;
+        column-gap: 14px;
+        row-gap: 14px;
+        padding: 20px 18px;
+        text-align: left;
+        border-top: 4px solid var(--verde-claro);
+    }
+    .mv-icono{
+        grid-area: icono;
+        width: 46px;
+        height: 46px;
+        margin: 0;
+        font-size: 1.1rem;
+    }
+    .mv-card h3{
+        grid-area: titulo;
+        margin: 0;
+        font-size: 1.3rem;
+    }
+    .mv-card p{
+        grid-area: texto;
+        font-size: 0.95rem;
+        line-height: 1.65;
+    }
+}
+
+/* En pantallas táctiles no se "levantan" las tarjetas al tocarlas */
+@media (hover: none){
+    .mv-card:hover{
+        transform: none;
+        box-shadow: 0 3px 12px var(--sombra-card-suave);
+    }
 }
 
 /* ===== Móviles pequeños ===== */
 @media (max-width: 480px){
     .encabezado h1{
-        max-width: 55%;
         font-size: 0.8rem;
     }
     .menu{
@@ -996,5 +1142,482 @@ section{
     }
     .texto-institucional{
         width: 95%;
+    }
+    .mv-card{
+        padding: 18px 15px;
+    }
+    .mv-card p{
+        font-size: 0.9rem;
+    }
+}
+
+/* ===== Ubicación con Google Maps (Inicio) ===== */
+.ubicacion{
+    width: 95%;
+    max-width: 1100px;
+    margin: 10px auto 40px;
+}
+.ubicacion-titulo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    color: var(--verde-principal);
+}
+.ubicacion-titulo i{
+    font-size: 1.6rem;
+    color: var(--verde-claro);
+}
+.ubicacion-titulo h2{
+    font-size: 1.8rem;
+    padding-bottom: 6px;
+    border-bottom: 3px solid var(--verde-claro);
+}
+.ubicacion-grid{
+    display: grid;
+    grid-template-columns: minmax(240px, 1fr) 1.6fr;
+    gap: 24px;
+    align-items: stretch;
+    background: var(--fondo-suave);
+    border: 1px solid var(--sombra-blog);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 14px var(--sombra-card-suave);
+}
+.ubicacion-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 18px;
+    color: var(--gris-texto);
+}
+.ubicacion-info p{
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    line-height: 1.5;
+}
+.ubicacion-info p > i{
+    flex: 0 0 38px;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--verde-principal);
+    color: var(--beige-claro);
+    border-radius: 50%;
+    font-size: 1rem;
+}
+.ubicacion-info b{
+    color: var(--verde-principal);
+}
+.ubicacion-botones{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 4px;
+}
+.btn-mapa{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 11px 18px;
+    background: var(--verde-principal);
+    color: var(--beige-claro);
+    border: 2px solid var(--verde-principal);
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.btn-mapa:hover{
+    background: var(--verde-claro);
+    border-color: var(--verde-claro);
+    color: var(--oscuro-violaceo);
+}
+.btn-mapa-sec{
+    background: transparent;
+    color: var(--verde-principal);
+}
+.ubicacion-mapa{
+    min-height: 320px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 3px solid var(--blanco);
+    box-shadow: 0 4px 14px var(--sombra-card);
+}
+.ubicacion-mapa iframe{
+    width: 100%;
+    height: 100%;
+    min-height: 320px;
+    border: 0;
+    display: block;
+}
+
+/* ===== Galería de fotos (Historia) ===== */
+.galeria-titulo{
+    text-align: center;
+    margin: 40px 0 20px;
+    color: var(--verde-principal);
+}
+.galeria-titulo h3{
+    font-size: 1.5rem;
+    display: inline-block;
+    padding-bottom: 6px;
+    border-bottom: 3px solid var(--verde-claro);
+}
+.galeria-titulo h3 i{
+    color: var(--verde-claro);
+    margin-right: 8px;
+}
+.galeria-titulo p{
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: var(--gris-texto);
+}
+.galeria{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 16px;
+    width: 100%;
+}
+.galeria-item{
+    position: relative;
+    margin: 0;
+    background: var(--blanco);
+    border: 1px solid var(--verde-medio);
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: zoom-in;
+    box-shadow: 0 3px 10px var(--sombra-card-suave);
+    transition: 0.3s;
+}
+.galeria-item:hover,
+.galeria-item:focus-visible{
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px var(--sombra-card);
+    outline: none;
+}
+.galeria-item img{
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+.galeria-item::after{
+    content: "\f00e";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(12, 56, 38, 0.75);
+    color: var(--beige-claro);
+    border-radius: 50%;
+    font-size: 0.9rem;
+    pointer-events: none;
+}
+.galeria-item figcaption{
+    padding: 10px 12px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--verde-principal);
+    font-weight: bold;
+}
+.galeria-item figcaption:empty{
+    display: none;
+}
+
+/* ===== Visor de fotos con zoom ===== */
+.visor{
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: flex;
+    flex-direction: column;
+    background: rgba(8, 22, 16, 0.96);
+    color: var(--beige-claro);
+}
+.visor[hidden]{
+    display: none;
+}
+.visor-barra{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 14px;
+    padding-top: calc(10px + env(safe-area-inset-top, 0px));
+}
+.visor-contador{
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+.visor-acciones{
+    display: flex;
+    gap: 8px;
+}
+.visor button{
+    background: rgba(238, 228, 228, 0.12);
+    color: var(--beige-claro);
+    border: none;
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.visor button:hover,
+.visor button:focus-visible{
+    background: var(--verde-claro);
+    color: var(--oscuro-violaceo);
+    outline: none;
+}
+.visor-escena{
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    overflow: auto;
+    touch-action: pan-x pan-y;
+}
+.visor-img{
+    margin: auto;
+    display: block;
+    max-width: 100%;
+    max-height: calc(100vh - 150px);
+    max-height: calc(100dvh - 150px);
+    cursor: zoom-in;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+.visor.con-zoom .visor-img{
+    cursor: zoom-out;
+}
+.visor-pie{
+    min-height: 56px;
+    padding: 12px 70px 16px;
+    padding-bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+    text-align: center;
+    font-size: 1rem;
+}
+.visor-nav{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(12, 56, 38, 0.7);
+}
+.visor-nav.prev{ left: 10px; }
+.visor-nav.next{ right: 10px; }
+
+@media (max-width: 868px){
+    /* Ubicación en celular: datos arriba, mapa abajo */
+    .ubicacion-grid{
+        grid-template-columns: 1fr;
+        padding: 14px;
+        gap: 18px;
+    }
+    .ubicacion-titulo h2{
+        font-size: 1.4rem;
+    }
+    .btn-mapa{
+        flex: 1 1 100%;
+        justify-content: center;
+    }
+    .ubicacion-mapa,
+    .ubicacion-mapa iframe{
+        min-height: 300px;
+    }
+
+    /* Galería en celular: dos columnas */
+    .galeria{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    .galeria-item figcaption{
+        font-size: 0.8rem;
+        padding: 8px 6px;
+    }
+    .galeria-item::after{
+        width: 28px;
+        height: 28px;
+        top: 6px;
+        right: 6px;
+        font-size: 0.75rem;
+    }
+    .visor-pie{
+        padding: 10px 56px 14px;
+        font-size: 0.95rem;
+    }
+    .visor-nav{
+        width: 38px;
+        height: 38px;
+    }
+    .visor-nav.prev{ left: 4px; }
+    .visor-nav.next{ right: 4px; }
+}
+@media (hover: none){
+    .galeria-item:hover{
+        transform: none;
+    }
+}
+
+/* ===== Foto dentro del carrusel ===== */
+.carrusel-slide.slide-foto{
+    background: #153631;
+}
+.carrusel-slide.slide-foto img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.carrusel-slide.slide-foto.slide-cover img{
+    object-fit: cover;
+}
+.vida-colegio{
+    width: 95%;
+    max-width: 1100px;
+    margin: 10px auto 40px;
+}
+
+/* ===== Autoridades y contacto: detalles ===== */
+.card-detalle{
+    margin-top: 8px;
+    font-size: 0.9rem;
+    color: var(--gris-texto);
+}
+.contacto-datos a{
+    color: var(--verde-principal);
+    font-weight: bold;
+    overflow-wrap: anywhere;
+}
+
+/* ===== Inscripciones: requisitos y fechas ===== */
+.insc-grid{
+    width: 95%;
+    max-width: 1100px;
+    margin: 10px auto 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    align-items: start;
+}
+.insc-card{
+    background: var(--fondo-suave);
+    border: 1px solid var(--verde-medio);
+    border-top: 4px solid var(--verde-claro);
+    border-radius: 8px;
+    padding: 22px;
+    box-shadow: 0 3px 10px var(--sombra-card-suave);
+}
+.insc-card h3{
+    color: var(--verde-principal);
+    font-size: 1.15rem;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.insc-card h3 i{
+    color: var(--verde-claro);
+}
+.insc-lista{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+.insc-lista li{
+    position: relative;
+    padding: 7px 0 7px 26px;
+    line-height: 1.5;
+    color: var(--gris-texto);
+    border-bottom: 1px solid var(--verde-medio);
+}
+.insc-lista li:last-child{
+    border-bottom: none;
+}
+.insc-lista li::before{
+    content: "\f00c";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    top: 9px;
+    font-size: 0.8rem;
+    color: var(--verde-claro);
+}
+.insc-lista b{
+    color: var(--verde-principal);
+}
+.insc-fechas-box{
+    width: 95%;
+    max-width: 800px;
+    margin: 10px auto 40px;
+}
+.insc-fechas{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-left: 3px solid var(--verde-claro);
+}
+.insc-fechas li{
+    position: relative;
+    margin: 0 0 14px 22px;
+    padding: 12px 16px;
+    background: var(--fondo-suave);
+    border: 1px solid var(--verde-medio);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.insc-fechas li::before{
+    content: "";
+    position: absolute;
+    left: -32px;
+    top: 18px;
+    width: 14px;
+    height: 14px;
+    background: var(--verde-principal);
+    border: 3px solid var(--blanco);
+    border-radius: 50%;
+}
+.insc-fechas li b{
+    color: var(--verde-principal);
+}
+.insc-fechas li span{
+    color: var(--gris-texto);
+    line-height: 1.5;
+}
+.insc-nota{
+    margin-top: 18px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--gris-texto);
+}
+.insc-nota i{
+    color: var(--verde-claro);
+    margin-right: 6px;
+}
+@media (max-width: 868px){
+    .insc-card{
+        padding: 18px 16px;
+    }
+    .insc-fechas li{
+        margin-left: 18px;
+        padding: 10px 12px;
+    }
+    .insc-fechas li::before{
+        left: -28px;
     }
 }

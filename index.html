@@ -15,7 +15,7 @@
         <nav>
             <div class="deco"></div>
             <div class="encabezado">
-                <a href="#inicio"><span><img src="colegioN7/WhatsApp Image 2026-06-13 at 15.57.14.jpeg.crdownload" alt=""></span>
+                <a href="#inicio"><span><img src="WhatsApp Image 2026-06-13 at 15.57.14.jpeg.crdownload" alt=""></span>
                     <h1><i><b>Colegio Secundario N°7 <br> "Mtro. Mario H. Perez"</b></i></h1>
                 </a>
                 <input type="checkbox" id="check">
@@ -25,8 +25,9 @@
 
                 <ol class="menu">
                     <li><a href="#inicio"><b>INICIO</b></a></li>
-                    <li><b>COLEGIO</b>
-                        <ul>
+                    <li class="tiene-sub">
+                        <button type="button" class="sub-toggle" aria-expanded="false" aria-controls="submenu-colegio"><b>COLEGIO</b></button>
+                        <ul id="submenu-colegio">
                             <li><a href="#historia"><b>Nuestra Historia</b></a></li>
                             <li><a href="#mision"><b>Misión y Visión</b></a></li>
                             <li><a href="#objetivos"><b>Objetivos y Valores</b></a></li>
@@ -46,17 +47,17 @@
         <section class="inicio" id="inicio">
             <div class="carrusel" id="carrusel">
                 <div class="carrusel-track" id="carrusel-track">
-                    <div class="carrusel-slide slide-1">
-                        <p><b>Foto del Colegio 1</b></p>
+                    <div class="carrusel-slide slide-1 slide-foto slide-cover">
+                        <img src="fotos/Promoción Colegio Secundario N°7_20261008_113348_0000.png" alt="Frente del Colegio Secundario N.º 7 Maestro Mario Humberto Pérez">
                     </div>
-                    <div class="carrusel-slide slide-2">
-                        <p><b>Foto del Colegio 2</b></p>
+                    <div class="carrusel-slide slide-2 slide-foto slide-cover">
+                        <img src="fotos/IMG-20261005-WA0031.jpg" alt="Egresados lanzando los birretes al aire durante el acto de egreso" style="object-position: 50% 60%;">
                     </div>
-                    <div class="carrusel-slide slide-3">
-                        <p><b>Foto del Colegio 3</b></p>
+                    <div class="carrusel-slide slide-3 slide-foto slide-cover">
+                        <img src="fotos/carrusel-colegio.jpg" alt="xd" style="object-position: 50% 72%;">
                     </div>
-                    <div class="carrusel-slide slide-4">
-                        <p><b>Foto del Colegio 4</b></p>
+                    <div class="carrusel-slide slide-4 slide-foto slide-cover">
+                        <img src="fotos/IMG-20261005-WA0034.jpg" alt="Estudiantes con remeras rojas y camperas blancas posando en un estadio" style="object-position: 50% 55%;">
                     </div>
                 </div>
                 <button class="carrusel-btn prev" id="carrusel-prev" aria-label="Foto anterior">&#10094;</button>
@@ -73,6 +74,57 @@
                     <p>Institución educativa de gestión pública ubicada en Perico, Jujuy, con orientaciones en <b>Artes Visuales</b> e <b>Informática</b>. Formamos personas preparadas para los cambios, con una actitud realista frente a la vida y un fuerte compromiso con la comunidad.</p>
                 </div>
                 <br>
+            </div>
+
+            <div class="vida-colegio">
+                <div class="galeria-titulo">
+                    <h3><i class="fa-solid fa-camera-retro"></i> Vida en el colegio</h3>
+                    <p>Momentos de nuestra comunidad. Tocá una foto para verla en grande.</p>
+                </div>
+                <!-- Para agregar una foto: copiá un bloque <figure class="galeria-item">, cambiá el archivo (src), la descripción (alt) y el texto del <figcaption>. -->
+                <div class="galeria">
+                        <figure class="galeria-item">
+                            <img src="fotos/IMG-20261005-WA0033.jpg" alt="Docentes posando frente a un cartel por el 17 de septiembre" loading="lazy">
+                            <figcaption>Festejo del 17 de septiembre con los docentes</figcaption>
+                        </figure>
+                        <figure class="galeria-item">
+                            <img src="fotos/IMG-20261005-WA0039.jpg" alt="Grupo de estudiantes con camisetas de Brasil, algunos con gorra y anteojos oscuros" loading="lazy">
+                            <figcaption>Presentación de baile en el patio</figcaption>
+                        </figure>
+                        <figure class="galeria-item">
+                            <img src="fotos/IMG-20261005-WA0035.jpg" alt="Egresados con birrete mostrando sus diplomas de honor" loading="lazy">
+                            <figcaption>Entrega de diplomas de honor</figcaption>
+                        </figure>
+                        <figure class="galeria-item">
+                            <img src="fotos/IMG-20261005-WA0037.jpg" alt="Estudiantes con buzos bordó posando con los banderines de la Promo 2026" loading="lazy">
+                            <figcaption>Promo 2026</figcaption>
+                        </figure>
+                       
+                        <figure class="galeria-item">
+                            <img src="fotos/IMG-20261005-WA0040.jpg" alt="Grupo numeroso de estudiantes en unas escalinatas de piedra" loading="lazy">
+                            <figcaption>Foto grupal de estudiantes</figcaption>
+                        </figure>
+                </div>
+            </div>
+
+            <div class="ubicacion">
+                <div class="ubicacion-titulo">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <h2>¿Dónde estamos?</h2>
+                </div>
+                <div class="ubicacion-grid">
+                    <div class="ubicacion-info">
+                        <p><i class="fa-solid fa-map-pin"></i><span><b>Dirección</b><br>Polonia S/N, Barrio Loteo Nuevo Perico, Perico, Jujuy (CP Y4610)</span></p>
+                        <p><i class="fa-regular fa-clock"></i><span><b>Horario</b><br>Lunes a viernes, de 7:00 a 19:00</span></p>
+                        <div class="ubicacion-botones">
+                            <a class="btn-mapa" href="https://www.google.com/maps/dir/?api=1&destination=Colegio+Secundario+N%C2%B07+Mario+H.+Perez,+Polonia+s/n,+Perico,+Jujuy" target="_blank" rel="noopener"><i class="fa-solid fa-route"></i> Cómo llegar</a>
+                            <a class="btn-mapa btn-mapa-sec" href="https://www.google.com/maps/search/?api=1&query=Colegio+Secundario+N%C2%B07+Mario+H.+Perez,+Polonia+s/n,+Perico,+Jujuy" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Abrir en Google Maps</a>
+                        </div>
+                    </div>
+                    <div class="ubicacion-mapa">
+                        <iframe title="Mapa con la ubicación del colegio" src="https://maps.google.com/maps?q=Colegio+Secundario+N%C2%B07+Mario+H.+Perez,+Polonia+s/n,+Perico,+Jujuy&hl=es&z=16&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -99,6 +151,50 @@
                 <div class="text-pri-bajo">
                     <i class="fa-solid fa-quote-left cita-icono"></i>
                     <p>Con la Ley de Educación Nacional N.º 26.206, el sistema de EGB y Polimodal fue reemplazado progresivamente. En 2011, la Resolución N.º 841 estableció la titulación de Bachiller Común y el Ciclo Básico (1° a 3° año), mientras que la Resolución N.º 2168 organizó el Ciclo Orientado (4° y 5° año). Desde 2018, mediante la Resolución N.º 7621, el colegio dicta las orientaciones en <b>Artes Visuales</b> (turno mañana) e <b>Informática</b> (turno tarde), vigentes en la actualidad.</p>
+                </div>
+                <div class="galeria-titulo">
+                    <h3><i class="fa-solid fa-images"></i> Galería de fotos</h3>
+                </div>
+                <!-- ============================================================
+                     CÓMO AGREGAR UNA FOTO A LA GALERÍA
+                     1) Guardá la foto en la carpeta "fotos".
+                     2) Copiá un bloque <figure class="galeria-item"> de abajo y pegalo al final.
+                     3) Cambiá el nombre del archivo (src), la descripción (alt) y el texto
+                        que está dentro de <figcaption>. Si no querés texto, dejalo vacío.
+                     ============================================================ -->
+                <div class="galeria" id="galeria">
+                    <figure class="galeria-item">
+                        <img src="fotos/inauguracion.jpg" alt="Acto de inauguración: una mujer habla frente a un micrófono, con estudiantes y banderas de ceremonia detrás" loading="lazy">
+                        <figcaption>Inauguración del colegio: la primera Directora y Fundadora</figcaption>
+                    </figure>
+                    <figure class="galeria-item">
+                        <img src="fotos/reina-2015.jpg" alt="Escenario de la elección de la Reina 2015 con las candidatas" loading="lazy">
+                        <figcaption>Primera elección de Reina 2015</figcaption>
+                    </figure>
+                    <figure class="galeria-item">
+                        <img src="fotos/mural-estudiantes.jpg" alt="Estudiantes posando frente a un mural de graffiti" loading="lazy">
+                        <figcaption>Primera promoción</figcaption>
+                    </figure>
+                    <figure class="galeria-item">
+                        <img src="fotos/desfile-bandera.jpg" alt="Abanderada con la bandera del colegio durante un desfile" loading="lazy">
+                        <figcaption>Primer desfile</figcaption>
+                    </figure>
+                    <figure class="galeria-item">
+                        <img src="fotos/estadio-estudiantes.jpg" alt="Estudiantes sentados en el césped de un estadio" loading="lazy">
+                        <figcaption>Primera presentacion en Sábados estundiantiles en cancha lobo</figcaption>
+                    </figure>
+                    <figure class="galeria-item">
+                        <img src="fotos/perro-parado.jpg" alt="Perro atigrado sentado frente a una pared pintada" loading="lazy">
+                        <figcaption>primeras mascotas del Colegio</figcaption>
+                    </figure>
+                    <figure class="galeria-item">
+                        <img src="fotos/perro-sonriendo.jpg" alt="Perro marrón y blanco con la boca abierta, dentro de un aula" loading="lazy">
+                        <figcaption>primeras mascotas del Colegio</figcaption>
+                    </figure>
+                    <figure class="galeria-item">
+                        <img src="fotos/perro-negro.jpg" alt="Perro negro recostado en el piso de un salón" loading="lazy">
+                        <figcaption>primeras mascotas del Colegio</figcaption>
+                    </figure>
                 </div>
                 <br>
             </div>
@@ -152,18 +248,45 @@
             <div class="cards-grid">
                 <div class="card">
                     <div class="card-icono"><i class="fa-solid fa-user-tie"></i></div>
-                    <h3>Rector/a</h3>
-                    <p><b>NOMBRE</b></p>
+                    <h3>Director</h3>
+                    <p><b>Eugenio Condori</b></p>
                 </div>
                 <div class="card">
                     <div class="card-icono"><i class="fa-solid fa-user-graduate"></i></div>
-                    <h3>Vicerrector/a</h3>
-                    <p><b>NOMBRE</b></p>
+                    <h3>Vicedirectora</h3>
+                    <p><b>Genoveva Ocedo</b></p>
                 </div>
                 <div class="card">
                     <div class="card-icono"><i class="fa-solid fa-file-signature"></i></div>
-                    <h3>Secretario/a</h3>
-                    <p><b>NOMBRE</b></p>
+                    <h3>Secretaria</h3>
+                    <p><b>Patricia Cozzi</b></p>
+                    <p class="card-detalle">Atención: 8:00 a 13:00</p>
+                </div>
+            </div>
+
+            <div class="seccion-sgheader">
+                <h2>Personal de la Institución</h2>
+            </div>
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-icono"><i class="fa-solid fa-person-chalkboard"></i></div>
+                    <h3>Docentes</h3>
+                    <p><b>Aproximadamente 60 profesores</b></p>
+                </div>
+                <div class="card">
+                    <div class="card-icono"><i class="fa-solid fa-user-check"></i></div>
+                    <h3>Preceptores</h3>
+                    <p><b>6 preceptores</b></p>
+                </div>
+                <div class="card">
+                    <div class="card-icono"><i class="fa-solid fa-folder-open"></i></div>
+                    <h3>Área administrativa</h3>
+                    <p><b>6 personas</b></p>
+                </div>
+                <div class="card">
+                    <div class="card-icono"><i class="fa-solid fa-key"></i></div>
+                    <h3>Porteros</h3>
+                    <p><b>6 porteros: 3 en el turno mañana y 3 en el turno tarde</b></p>
                 </div>
             </div>
         </section>
@@ -172,23 +295,24 @@
             <div class="seccion-header">
                 <h2>Noticias y Novedades</h2>
             </div>
-            <div class="cards-grid">
-                <div class="card noticia">
-                    <span class="noticia-fecha">FECHA</span>
-                    <h3>TITULO DE LA NOTICIA</h3>
-                    <p><b>TEXT</b></p>
-                </div>
-                <div class="card noticia">
-                    <span class="noticia-fecha">FECHA</span>
-                    <h3>TITULO DE LA NOTICIA</h3>
-                    <p><b>TEXT</b></p>
-                </div>
-                <div class="card noticia">
-                    <span class="noticia-fecha">FECHA</span>
-                    <h3>TITULO DE LA NOTICIA</h3>
-                    <p><b>TEXT</b></p>
-                </div>
+            <!-- ============================================================
+                 CÓMO AGREGAR UNA NOVEDAD
+                 1) Copiá el bloque de ejemplo de abajo (sin las flechas del comentario).
+                 2) Pegalo dentro de <div id="noticias-lista">, antes de su cierre.
+                 3) Cambiá la fecha, el título y el texto. La imagen es opcional.
+                 Mientras no haya ninguna, se muestra "Todavía no hay novedades".
+
+                 <article class="card noticia">
+                     <img class="noticia-img" src="fotos/mi-foto.jpg" alt="Descripción de la foto">
+                     <span class="noticia-fecha">15 de octubre de 2026</span>
+                     <h3>Título de la novedad</h3>
+                     <p>Texto de la novedad.</p>
+                 </article>
+                 ============================================================ -->
+            <div class="cards-grid" id="noticias-lista">
+                <!-- Pegá acá tus novedades -->
             </div>
+            <p class="sin-novedades" id="sin-novedades">Todavía no hay novedades en la página</p>
         </section>
 
         <section id="cursos">
@@ -211,10 +335,10 @@
 
                 <div class="anio-contenido activo" id="anio-1">
                     <div class="divisiones-botones">
-                        <a href="fernandez/html1°1°.html" class="division-btn">1° 1ra</a>
-                        <a href="fernandez/html1°2°.html" class="division-btn">1° 2da</a>
+                        <a href="1ro 1ra - 1ro 2da/html1º1º.html" class="division-btn">1° 1ra</a>
+                        <a href="1ro 1ra - 1ro 2da/html1º2º.html" class="division-btn">1° 2da</a>
                         <a href="1ro 3ra/1°3°.html" class="division-btn">1° 3ra</a>
-                        <a href="fernandez/html1°4°.html" class="division-btn">1° 4ta</a>
+                        <a href="cursos/1-4ta.html" class="division-btn">1° 4ta</a>
                         <a href="1°5/index.HTML" class="division-btn">1° 5ta</a>
                     </div>
                 </div>
@@ -260,9 +384,11 @@
                 <div class="contacto-datos">
                     
                     <p><b>Dirección:</b> Calle Polonia S/N, Barrio Loteo Nuevo Perico, Perico, Jujuy, Argentina</p>
-                    <p><b>Teléfono:</b> TEXT</p>
-                    <p><b>Email:</b> TEXT</p>
-                    <p><b>Horario:</b> TEXT</p>
+                    <p><b>Teléfono:</b> El colegio no cuenta con línea fija institucional. La comunicación se realiza a través de los celulares del personal y los docentes.</p>
+                    <p><b>Email:</b> <a href="mailto:colegio_secundario7perico@hotmail.com">colegio_secundario7perico@hotmail.com</a></p>
+                    <p><b>Horario del colegio:</b> Lunes a viernes, de 7:00 a 19:00</p>
+                    <p><b>Secretaría:</b> de 8:00 a 13:00</p>
+                    <p><b>Atención de Dirección:</b> martes y jueves, de 8:30 a 12:00 y de 14:30 a 18:00</p>
                 </div>
                 <form class="contacto-form">
                     <h3>Contáctanos</h3>
@@ -280,20 +406,74 @@
             </div>
             <div class="cards-grid">
                 <div class="card">
-                    <div class="card-icono"><i class="fa-solid fa-clipboard-list"></i></div>
-                    <h3>Requisitos</h3>
-                    <p><b>TEXT</b></p>
+                    <div class="card-icono"><i class="fa-solid fa-laptop"></i></div>
+                    <h3>Modalidad</h3>
+                    <p><b>La inscripción es digital: los aspirantes se preinscriben en la institución que eligen y luego participan de un sorteo.</b></p>
                 </div>
                 <div class="card">
                     <div class="card-icono"><i class="fa-solid fa-calendar-days"></i></div>
                     <h3>Fechas</h3>
-                    <p><b>TEXT</b></p>
+                    <p><b>La preinscripción digital comienza en octubre. Las inscripciones definitivas se completan en febrero y marzo, según las fechas y resoluciones del Ministerio de Educación.</b></p>
                 </div>
                 <div class="card">
                     <div class="card-icono"><i class="fa-solid fa-clock"></i></div>
                     <h3>Turnos</h3>
-                    <p><b>TEXT</b></p>
+                    <p><b>Ciclo Orientado: Bachiller en Artes Visuales (turno mañana) y Bachiller en Informática (turno tarde).</b></p>
                 </div>
+            </div>
+
+            <div class="seccion-sgheader">
+                <h2>Requisitos</h2>
+            </div>
+            <div class="insc-grid">
+                <div class="insc-card">
+                    <h3><i class="fa-solid fa-door-open"></i> Ingreso a 1.º año</h3>
+                    <ul class="insc-lista">
+                        <li>Fotocopia del DNI del alumno</li>
+                        <li>CUIL del alumno</li>
+                        <li>Fotocopia del DNI del tutor</li>
+                        <li>Certificado autenticado de 7.º grado o constancia de alumno regular</li>
+                        <li>Testimonio de nacimiento autenticado del alumno</li>
+                        <li>Certificado de buena salud</li>
+                        <li>Fotocopia del CUD (si corresponde) o Proyecto Pedagógico Individual</li>
+                        <li>Carpeta de tres solapas, de cartón, tamaño oficio (color amarillo)</li>
+                    </ul>
+                </div>
+                <div class="insc-card">
+                    <h3><i class="fa-solid fa-clipboard-check"></i> Resto de los cursos</h3>
+                    <ul class="insc-lista">
+                        <li>DNI actualizado (fotocopia del DNI del alumno y del tutor)</li>
+                        <li>Formulario SINIDE, Reglamento de convivencia y Ficha de inscripción (se compran en secretaría)</li>
+                        <li>Libreta de calificación del ciclo lectivo 2025</li>
+                        <li><b>3.º y 4.º año:</b> fotocopia del certificado de 7.º grado autenticado por el Ministerio de Educación</li>
+                        <li><b>5.º año:</b> CUIL, testimonio de nacimiento actualizado (2026), fotocopia del certificado de 7.º grado autenticado por el Ministerio de Educación y fotocopia del DNI actualizado</li>
+                        <li><b>Alumnos de otros colegios:</b> carpeta de tres solapas, de cartón, tamaño oficio</li>
+                    </ul>
+                </div>
+                <div class="insc-card">
+                    <h3><i class="fa-solid fa-shirt"></i> Uniforme obligatorio</h3>
+                    <ul class="insc-lista">
+                        <li>Camisa blanca con corbata verde</li>
+                        <li>Pantalón de vestir negro</li>
+                        <li>Zapatos negros</li>
+                        <li><b>Educación física:</b> remera blanca o chomba del colegio, pantalón deportivo negro y zapatillas</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="seccion-sgheader">
+                <h2>Fechas del ciclo lectivo 2026</h2>
+            </div>
+            <div class="insc-fechas-box">
+                <ul class="insc-fechas">
+                    <li><b>18 y 19 de febrero</b><span>Inscripciones para alumnos que aprobaron el curso inmediato superior en el período regular de diciembre.</span></li>
+                    <li><b>25 de febrero</b><span>No hay atención al público por jornada institucional.</span></li>
+                    <li><b>26 y 27 de febrero</b><span>Mesas de exámenes regulares.</span></li>
+                    <li><b>2 de marzo</b><span>Mesas de exámenes pendientes de acreditación (previos).</span></li>
+                    <li><b>3 y 4 de marzo</b><span>Inscripciones para los alumnos que aprobaron el curso inmediato en febrero.</span></li>
+                    <li><b>5 y 6 de marzo</b><span>Inscripciones para alumnos recursantes por primera vez.</span></li>
+                </ul>
+                <p class="insc-nota"><i class="fa-solid fa-circle-info"></i> Calendario del ciclo lectivo 2026. Para las fechas del próximo ciclo, consultá en secretaría (de 8:00 a 13:00).</p>
             </div>
         </section>
     </main>
@@ -320,8 +500,8 @@
                 <h2>Contacto</h2>
                 <ul>
                     <li><a href="#contacto">Información de Contacto</a></li>
-                    <li>TEXT</li>
-                    <li>TEXT</li>
+                    <li>Calle Polonia S/N, Perico, Jujuy</li>
+                    <li>Sin línea fija: contacto por celular del personal</li>
                 </ul>
             </div>
         </div>
